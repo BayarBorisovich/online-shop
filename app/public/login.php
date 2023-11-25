@@ -32,12 +32,15 @@ if ($requestMethod === 'POST') {
         $pdo = new PDO("pgsql:host=db;dbname=postgres", "dbuser", "dbpwd");
         $stmt = $pdo->prepare("SELECT * FROM users WHERE email=:email");
         $stmt->execute(['email' => $login]);
+        $data = $stmt->fetch();
 
-        $user = $stmt->fetch();
+        if (!empty($data)) {
+            if ($password === $data['password']) {
+                setcookie('login', $login, 0, "/");
 
-        if (!empty($user)) {
-            if ($password === $user['password']) {
-                echo 'Login success';
+//               session_start();
+//               $_SESSION['user_id'] = $data['id'];
+               header('location: /main.php');
             } else {
                 $errors['login'] = 'логин или пароль введены не верно';
             }

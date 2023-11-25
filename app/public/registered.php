@@ -67,7 +67,7 @@ if ($requestMethod === 'POST') {
         $stmt = $pdo->prepare(query: 'SELECT * FROM users WHERE name = :name');
         $stmt->execute(['name' => $name]);
         $data = $stmt->fetch();
-        echo 'Регистрация прошла успешно!';
+        header("location: /login.php");
     }
 }
 
