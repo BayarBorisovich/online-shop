@@ -1,86 +1,11 @@
-<?php
-$requestMethod = $_SERVER['REQUEST_METHOD'];
-if ($requestMethod === 'POST') {
-     function validate($data) {
-        $errors = [];
-        if (isset($data['email'])) {
-            $login = $data['email'];
-            if (empty($login)) {
-                $errors ['login'] = 'Заполните поле Login';
-            } elseif (!strpos($login, '@')){
-                $errors['login'] = "Некоректное заполнение поля Login, нет символа @";
-            }
-        } else {
-            $errors = 'Заполните поле Login';
-        }
-        if (isset($data['psw'])) {
-            $password = $data['psw'];
-            if (empty($password)) {
-                $errors['psw'] = 'Заполните поле password';
-            }
-        } else {
-            $errors['psw'] = 'Заполните поле password';
-        }
-        return $errors;
-    }
-    $errors = validate($_POST);
-
-    if (empty($errors)) {
-        $login = $_POST['email'];
-        $password = $_POST['psw'];
-
-        $pdo = new PDO("pgsql:host=db;dbname=postgres", "dbuser", "dbpwd");
-        $stmt = $pdo->prepare("SELECT * FROM users WHERE email=:email");
-        $stmt->execute(['email' => $login]);
-        $data = $stmt->fetch();
-
-        if (!empty($data)) {
-            if ($password === $data['password']) {
-                setcookie('login', $login, 0, "/");
-
-//               session_start();
-//               $_SESSION['user_id'] = $data['id'];
-               header('location: /main.php');
-            } else {
-                $errors['login'] = 'логин или пароль введены не верно';
-            }
-        } else {
-            $errors['login'] = 'логин или пароль введены не верно';
-        }
-
-    }
-}
-?>
 
 <div class="wrapper fadeInDown">
     <div id="formContent">
-        <!-- Tabs Titles -->
-        <h2 class="active"> Sign In </h2>
-        <h2 class="inactive underlineHover">Sign Up </h2>
-
-        <!-- Icon -->
-        <div class="fadeIn first">
-            <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" />
-        </div>
-
-        <!-- Login Form -->
-        <form action="" method="post">
-            <?php if(isset($errors['login'])): ?>
-                <label style="color: red"> <?php echo $errors['login'] ?></label>
-            <?php endif; ?>
-            <input type="text" id="login" class="fadeIn second" name="email" placeholder="login">
-            <?php if(isset($errors['psw'])): ?>
-                <label style="color: red"> <?php echo $errors['psw'] ?></label>
-            <?php endif; ?>
-            <input type="text" id="password" class="fadeIn third" name="psw" placeholder="password">
-            <input type="submit" class="fadeIn fourth" value="Log In">
+        <form action="/add-product" method="post">
+            <input type="text" id="product_id" class="fadeIn second" name="product_id" placeholder="Product-id">
+            <input type="text" id="quantity" class="fadeIn third" name="quantity" placeholder="Quantity">
+            <input type="submit" class="fadeIn fourth" value="Add to cart">
         </form>
-
-        <!-- Remind Passowrd -->
-        <div id="formFooter">
-            <a class="underlineHover" href="#">Forgot Password?</a>
-        </div>
-
     </div>
 </div>
 <style>
