@@ -23,6 +23,8 @@ services:
   db:
     image: postgres:10.1
     restart: always
+    volumes:
+      - "./sourcefiles/postgres:/var/lib/postgresql/data"
     environment:
       - POSTGRES_DB=${DB_DATABASE}
       - POSTGRES_USER=${DB_USERNAME}
