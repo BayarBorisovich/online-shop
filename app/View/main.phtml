@@ -1,0 +1,90 @@
+<div class="container">
+    <h2>Catalog</h2>
+    <div class="card-deck">
+        <?php foreach ($products as $product): ?>
+            <form action="/add-product" method="post">
+                <div class="card text-center">
+                    <a href="#">
+                        <div class="card-header">
+                            Hit!
+                        </div>
+                        <img class="card-img-top" src=<?php echo $product['image_link'] ?> alt="Card image">
+                        <div class="card-body">
+                            <a href="#"><h2 class="card-title"><?php echo $product['name'] ?></h2></a>
+                            <a href="#"><h4 class="card-title"><?php echo $product['description'] ?></h4></a>
+                            <input type="text" id="product_id" class="fadeIn second" name="product_id" placeholder="Product-id" hidden="" value="<?php echo $product['id'] ?>">
+                            <input type="text" id="quantity" class="fadeIn third" name="quantity" placeholder="Quantity">
+                            <input type="submit" class="fadeIn fourth" value="Add to cart">
+                            <div class="card-footer">
+                                <?php echo $product['price']." р." ?>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </form>
+        <?php endforeach; ?>
+    </div>
+    <style>
+        body {
+            font-style: normal;display:flex;
+            justify-content: center;
+            /*align-items: center;*/
+            margin:100px auto;
+        }
+
+        a {
+            text-decoration: none;
+        }
+        .card-deck {
+            position: relative;
+            /*border: solid orange;*/
+            height: 50px;
+
+
+
+        }
+        .card-deck {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        h3 {
+            line-height: 5em;
+        }
+
+        .card {
+            max-width: 16rem;
+        }
+
+        .card:hover {
+            box-shadow: 1px 2px 10px lightgray;
+            transition: 0.2s;
+        }
+
+        .card-header {
+            font-size: 13px;
+            color: greenyellow;
+            background-color: white;
+            font-weight: bold;
+            background-color: blue;
+        }
+
+        .text-muted {
+            font-size: 11px;
+        }
+
+        .card-footer{
+            position: absolute;
+            color: black;
+            font-weight: bold;
+            font-size: 18px;
+            background-color: red;
+            border-radius:10px;
+        }
+    </style>

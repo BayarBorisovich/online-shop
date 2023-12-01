@@ -1,15 +1,23 @@
 <?php
-//echo 'test';
 $requestUri = $_SERVER['REQUEST_URI'];
 if ($requestUri === '/registrate') {
-    require_once './handler/registrate.php';
+    require_once '../Controller/UserController.php';
+    $userController = new UserController();
+    $userController->registrate();
 } elseif ($requestUri === '/login') {
-    require_once './handler/login.php';
+    require_once '../Controller/UserController.php';
+    $userController = new UserController();
+    $userController->login();
 } elseif ($requestUri === '/main') {
-    require_once './handler/main.php';
+    require_once '../Controller/IndexController.php';
+    $indexController = new indexController();
+    $indexController->main();
 } elseif ($requestUri === '/add-product') {
-    require_once './handler/addProduct.php';
+    require_once '../Model/Cart.php';
+    require_once '../Controller/CartController.php';
+    $cartController = new CartController();
+    $cartController->addProduct();
 } else {
-    require_once './html/404.html';
+    require_once '../View/404.html';
 }
 ?>
