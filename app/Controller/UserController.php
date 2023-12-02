@@ -2,32 +2,33 @@
 
 class UserController
 {
-    public function registrate()
+    public function registration($data): void
     {
         $requestMethod = $_SERVER['REQUEST_METHOD'];
 
         if ($requestMethod === 'POST') {
 
-            $errors = $this->validateRegistrate ($_POST);
+            $errors = $this->validateRegistration($data);
             if (empty($errors)) {
-                $name = $_POST['name'];
-                $email = $_POST['email'];
-                $password = $_POST['psw'];
-                $repeatPassword = $_POST['psw-repeat'];
+                $name = $data['name'];
+                $email = $data['email'];
+                $password = $data['psw'];
+                $repeatPassword = $data['psw-repeat'];
 
-                $pdo = new PDO("pgsql:host=db;dbname=postgres", "dbuser", "dbpwd");
-                $stmt = $pdo->prepare(query: 'INSERT INTO users ( name, email, password) VALUES (:name, :email, :password)');
-                $stmt->execute(['name' => $name, 'email' => $email, 'password' => $password]);
-                $stmt = $pdo->prepare(query: 'SELECT * FROM users WHERE name = :name');
-                $stmt->execute(['name' => $name]);
-                $data = $stmt->fetch();
+                require_once '../Model/User.php';
+
+                $userModel = new User();
+                $userModel->create($name, $email, $password);
+
+                $requestData = $userModel->addOneByName($name);
+
                 header("location: /login");
             }
         }
-        require_once '../View/registrate.phtml';
+        require_once '../View/registration.phtml';
 
     }
-    private function validateRegistrate ($data): array
+    private function validateRegistration($data): array
     {
         $errors = [];
         if (isset($data['name'])) {
@@ -78,26 +79,26 @@ class UserController
         return $errors;
     }
 
-    public function login (): void
+    public function login($data): void
     {
         $requestMethod = $_SERVER['REQUEST_METHOD'];
         if ($requestMethod === 'POST') {
 
-            $errors = $this->validateLogin ($_POST);
+            $errors = $this->validateLogin ($data);
 
             if (empty($errors)) {
-                $login = $_POST['email'];
-                $password = $_POST['psw'];
+                $login = $data['email'];
+                $password = $data['psw'];
 
-                $pdo = new PDO("pgsql:host=db;dbname=postgres", "dbuser", "dbpwd");
-                $stmt = $pdo->prepare("SELECT * FROM users WHERE email=:email");
-                $stmt->execute(['email' => $login]);
-                $data = $stmt->fetch();
+                require_once '../Model/User.php';
 
-                if (!empty($data)) {
-                    if ($password === $data['password']) {
+                $userModel = new User();
+                $requestData = $userModel->addOneByEmail($login);
+
+                if (!empty($requestData)) {
+                    if ($password === $requestData['password']) {
                         session_start();
-                        $_SESSION['user_id'] = $data['id'];
+                        $_SESSION['user_id'] = $requestData['id'];
                         header('location: /main');
                     } else {
                         $errors['login'] = 'логин или пароль введены не верно';
@@ -110,7 +111,7 @@ class UserController
         }
         require_once '../View/login.phtml';
     }
-    private function validateLogin (array $data): array
+    private function validateLogin(array $data): array
     {
         $errors = [];
         if (isset($data['email'])) {

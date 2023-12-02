@@ -1,12 +1,10 @@
 <?php
-
-class Product
+require_once '../Model/ConnectingToTheDatabase.php';
+class Product extends ConnectingToTheDatabase
 {
     public function getAll (): array|false
     {
-        $pdo = new PDO("pgsql:host=db;dbname=postgres", "dbuser", "dbpwd");
-
-        $stmt = $pdo->query('SELECT * FROM products');
+        $stmt = $this->PDO->query('SELECT * FROM products');
         return $stmt->fetchAll();
     }
 
