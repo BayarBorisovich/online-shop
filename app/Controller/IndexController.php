@@ -7,8 +7,8 @@ class IndexController
         if (isset($_SESSION['user_id'])) {
 
 //            require_once '../Model/Product.php';
-            $productModel = new Product();
-            $products = $productModel->getAll();
+//            $productModel = new Product();
+            $products = Product::getAll();
             echo 'Добро пожаловать в каталог Online-shop';
         } else {
             header('location: ../Controller/UserController.php');

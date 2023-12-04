@@ -20,7 +20,7 @@ class UserController
                 $userModel = new User();
                 $userModel->create($name, $email, $password);
 
-                $requestData = $userModel->addOneByName($name);
+                $requestData = User::addOneByName($name);
 
                 header("location: /login");
             }
@@ -92,13 +92,13 @@ class UserController
 
 //                require_once '../Model/User.php';
 
-                $userModel = new User();
-                $requestData = $userModel->addOneByEmail($login);
+//                $userModel = new User();
+                $requestData = User::addOneByEmail($login);
 
                 if (!empty($requestData)) {
-                    if ($password === $requestData['password']) {
+                    if ($password === $requestData->getPassword()) {
                         session_start();
-                        $_SESSION['user_id'] = $requestData['id'];
+                        $_SESSION['user_id'] = $requestData->getId();
                         header('location: /main');
                     } else {
                         $errors['login'] = 'логин или пароль введены не верно';

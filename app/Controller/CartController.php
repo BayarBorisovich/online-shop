@@ -15,14 +15,15 @@ class CartController
                     $userId = $_SESSION['user_id'];
 
 //                    require_once '../Model/Cart.php';
-                    $cartModel = new Cart();
-                    $cart = $cartModel->getOne($userId);
+
+                    $cart = Cart::getOne($userId);
                     if (empty($cart)) {
+                        $cartModel = new Cart();
                         $cartModel->create($userId);
 
-                        $cart = $cartModel->getOne($userId);
+                        $cart = Cart::getOne($userId);
                     }
-                    $cartId = $cart['id'];
+                    $cartId = $cart->getId();
 //                    require_once '../Model/CartProduct.php';
                     $cartProductModel = new CartProduct();
                     $cartProductModel->create($cartId, $productId, $quantity);
