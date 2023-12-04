@@ -15,7 +15,7 @@ class UserController
                 $password = $data['psw'];
                 $repeatPassword = $data['psw-repeat'];
 
-                require_once '../Model/User.php';
+//                require_once '../Model/User.php';
 
                 $userModel = new User();
                 $userModel->create($name, $email, $password);
@@ -90,7 +90,7 @@ class UserController
                 $login = $data['email'];
                 $password = $data['psw'];
 
-                require_once '../Model/User.php';
+//                require_once '../Model/User.php';
 
                 $userModel = new User();
                 $requestData = $userModel->addOneByEmail($login);

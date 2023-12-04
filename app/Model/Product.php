@@ -1,6 +1,6 @@
 <?php
-require_once '../Model/ConnectingToTheDatabase.php';
-class Product extends ConnectingToTheDatabase
+require_once '../Model/Model.php';
+class Product extends Model
 {
     public function getAll (): array|false
     {

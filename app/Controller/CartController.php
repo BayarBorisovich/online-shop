@@ -14,7 +14,7 @@ class CartController
                 if (isset($_SESSION['user_id'])) {
                     $userId = $_SESSION['user_id'];
 
-                    require_once '../Model/Cart.php';
+//                    require_once '../Model/Cart.php';
                     $cartModel = new Cart();
                     $cart = $cartModel->getOne($userId);
                     if (empty($cart)) {
@@ -23,7 +23,7 @@ class CartController
                         $cart = $cartModel->getOne($userId);
                     }
                     $cartId = $cart['id'];
-                    require_once '../Model/CartProduct.php';
+//                    require_once '../Model/CartProduct.php';
                     $cartProductModel = new CartProduct();
                     $cartProductModel->create($cartId, $productId, $quantity);
                     header('location: /main');
@@ -34,6 +34,6 @@ class CartController
         }
 
 
-        require_once '../Controller/IndexController.php';
+//        require_once '../Controller/IndexController.php';
     }
 }

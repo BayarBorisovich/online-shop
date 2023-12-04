@@ -1,6 +1,6 @@
 <?php
 
-class ConnectingToTheDatabase
+class Model
 {
     protected PDO $PDO;
 

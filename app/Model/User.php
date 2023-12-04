@@ -1,6 +1,6 @@
 <?php
-require_once '../Model/ConnectingToTheDatabase.php';
-class User extends ConnectingToTheDatabase
+require_once '../Model/Model.php';
+class User extends Model
 {
     public function create(string $name, string $email,string $password): array|bool
     {
@@ -20,6 +20,6 @@ class User extends ConnectingToTheDatabase
         $stmt = $this->PDO->prepare("SELECT * FROM users WHERE email=:email");
         $stmt->execute(['email' => $login]);
         return $stmt->fetch();
-    }
 
+    }
 }

@@ -6,7 +6,7 @@ class IndexController
         session_start();
         if (isset($_SESSION['user_id'])) {
 
-            require_once '../Model/Product.php';
+//            require_once '../Model/Product.php';
             $productModel = new Product();
             $products = $productModel->getAll();
             echo 'Добро пожаловать в каталог Online-shop';

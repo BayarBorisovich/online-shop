@@ -1,7 +1,7 @@
 <?php
 
-require_once '../Model/ConnectingToTheDatabase.php';
-class Cart extends ConnectingToTheDatabase
+require_once '../Model/Model.php';
+class Cart extends Model
 {
     public function getOne(int $userId): mixed
     {

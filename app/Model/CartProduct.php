@@ -1,6 +1,6 @@
 <?php
-require_once '../Model/ConnectingToTheDatabase.php';
-class CartProduct extends ConnectingToTheDatabase
+require_once '../Model/Model.php';
+class CartProduct extends Model
 {
     public function create(int $cartId, int $productId, int $quantity): bool
     {
