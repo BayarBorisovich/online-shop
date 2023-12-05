@@ -9,34 +9,39 @@ class User extends Model
 
     public function __construct(int $id, string $name, string $email, string $password)
     {
-
         $this->id = $id;
         $this->name = $name;
         $this->email = $email;
         $this->password = $password;
     }
 
-    public function create(string $name, string $email,string $password): array|bool
+    public static function create(string $name, string $email,string $password): array|bool
     {
-        $stmt = $this->PDO->prepare(query: 'INSERT INTO users ( name, email, password) VALUES (:name, :email, :password)');
+        $stmt = self::getPDO()->prepare(query: 'INSERT INTO users ( name, email, password) VALUES (:name, :email, :password)');
         return $stmt->execute(['name' => $name, 'email' => $email, 'password' => $password]);
     }
 
-    public static function addOneByName( $name): User
+    public static function addOneByName( $name): User|null
     {
-        parent::getPdo1();
-        $stmt = parent::$PDO1->prepare(query: 'SELECT * FROM users WHERE name = :name');
+        $stmt = self::getPDO()->prepare(query: 'SELECT * FROM users WHERE name = :name');
         $stmt->execute(['name' => $name]);
         $data = $stmt->fetch();
+
+        if (empty($data)) {
+            return null;
+        }
         return new self($data['id'], $data['name'], $data['email'], $data['password']);
     }
 
-    public static function addOneByEmail( $login): User
+    public static function addOneByEmail($login): User|null
     {
-        parent::getPdo1();
-        $stmt = parent::$PDO1->prepare("SELECT * FROM users WHERE email=:email");
+        $stmt = self::getPDO()->prepare("SELECT * FROM users WHERE email=:email");
         $stmt->execute(['email' => $login]);
         $data = $stmt->fetch();
+
+        if (empty($data)) {
+            return null;
+        }
         return new self($data['id'], $data['name'], $data['email'], $data['password']);
 
     }

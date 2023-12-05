@@ -1,7 +1,7 @@
 <div class="container">
     <h2>Catalog</h2>
     <div class="card-deck">
-        <?php foreach ($products as $product):;?>
+        <?php foreach ($products as $product): ?>
 
             <form action="/add-product" method="post">
                 <div class="card text-center">
@@ -13,8 +13,8 @@
                         <div class="card-body">
                             <a href="#"><h2 class="card-title"><?php echo $product->getName() ?></h2></a>
                             <a href="#"><h4 class="card-title"><?php echo $product->getDescription() ?></h4></a>
-                            <input type="text" id="product_id" class="fadeIn second" name="product_id" placeholder="Product-id" hidden="" value="<?php echo $product->getId() ?>">
-                            <input type="text" id="quantity" class="fadeIn third" name="quantity" placeholder="Quantity">
+                            <label for="product_id"></label><input type="text" id="product_id" class="fadeIn second" name="product_id" placeholder="Product-id" hidden="" value="<?php echo $product->getId() ?>">
+                            <label for="quantity"></label><input type="text" id="quantity" class="fadeIn third" name="quantity" placeholder="Quantity">
                             <input type="submit" class="fadeIn fourth" value="Add to cart">
                             <div class="card-footer">
                                 <?php echo $product->getPrice() ." р." ?>
@@ -71,13 +71,8 @@
         .card-header {
             font-size: 13px;
             color: greenyellow;
-            background-color: white;
             font-weight: bold;
             background-color: blue;
-        }
-
-        .text-muted {
-            font-size: 11px;
         }
 
         .card-footer{

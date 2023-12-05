@@ -14,19 +14,15 @@ class CartController
                 if (isset($_SESSION['user_id'])) {
                     $userId = $_SESSION['user_id'];
 
-//                    require_once '../Model/Cart.php';
-
                     $cart = Cart::getOne($userId);
-                    if (empty($cart)) {
-                        $cartModel = new Cart();
-                        $cartModel->create($userId);
+                    if (!isset($cart)) {
+                        Cart::create($userId);
 
                         $cart = Cart::getOne($userId);
                     }
                     $cartId = $cart->getId();
-//                    require_once '../Model/CartProduct.php';
-                    $cartProductModel = new CartProduct();
-                    $cartProductModel->create($cartId, $productId, $quantity);
+
+                    CartProduct::create($cartId, $productId, $quantity);
                     header('location: /main');
                 }
             }

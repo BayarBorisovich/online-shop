@@ -7,19 +7,19 @@
 
         <!-- Icon -->
         <div class="fadeIn first">
-            <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" />
+            <img src="https://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" />
         </div>
 
         <!-- Login Form -->
         <form action="" method="post">
             <?php if(isset($errors['login'])): ?>
-                <label style="color: red"> <?php echo $errors['login'] ?></label>
+                <label style="color: red"> <?php echo $errors['login']; ?></label>
             <?php endif; ?>
-            <input type="text" id="login" class="fadeIn second" name="email" placeholder="login">
+            <label for="login"></label><input type="text" id="login" class="fadeIn second" name="email" placeholder="login">
             <?php if(isset($errors['psw'])): ?>
                 <label style="color: red"> <?php echo $errors['psw'] ?></label>
             <?php endif; ?>
-            <input type="text" id="password" class="fadeIn third" name="psw" placeholder="password">
+            <label for="password"></label><input type="text" id="password" class="fadeIn third" name="psw" placeholder="password">
             <input type="submit" class="fadeIn fourth" value="Log In">
         </form>
 
@@ -75,11 +75,10 @@
         -webkit-border-radius: 10px 10px 10px 10px;
         border-radius: 10px 10px 10px 10px;
         background: #fff;
-        padding: 30px;
         width: 90%;
         max-width: 450px;
         position: relative;
-        padding: 0px;
+        padding: 0;
         -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
         box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
         text-align: center;
@@ -147,7 +146,6 @@
 
     input[type=text] {
         background-color: #f6f6f6;
-        border: none;
         color: #0d0d0d;
         padding: 15px 32px;
         text-align: center;
@@ -171,7 +169,7 @@
         border-bottom: 2px solid #5fbae9;
     }
 
-    input[type=text]:placeholder {
+    input[type=text]::placeholder {
         color: #cccccc;
     }
 

@@ -18,8 +18,7 @@ class Product extends Model
     }
     public static function getAll(): array
     {
-        parent::getPdo1();
-        $stmt = parent::$PDO1->query('SELECT * FROM products');
+        $stmt = self::getPDO()->query('SELECT * FROM products');
         $data = $stmt->fetchAll();
         $arr = [];
         foreach ($data as $product) {

@@ -14,17 +14,20 @@ class Cart extends Model
         $this->userId = $userId;
     }
 
-    public static function getOne(int $userId): Cart
+    public static function getOne(int $userId): Cart|null
     {
-        parent::getPdo1();
-        $stmt = self::$PDO1->prepare(query: 'SELECT * FROM carts WHERE user_id = :userId');
-        $stmt->execute(['userId' => $userId]);
+        $stmt = self::getPDO()->prepare(query: 'SELECT * FROM carts WHERE user_id = :user_id');
+        $stmt->execute(['user_id' => $userId]);
         $data = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if (empty($data)) {
+            return null;
+        }
         return new self($data['id'], $data['name'], $data['user_id']);
     }
-    public function create(int $userId, string $name = null): bool
+    public static function create(int $userId): bool
     {
-        $stmt = $this->PDO->prepare(query: 'INSERT INTO carts ( name, user_id) VALUES (:name, :id)');
+        $stmt = self::getPDO()->prepare(query: 'INSERT INTO carts (name, user_id) VALUES (:name, :id)');
         return $stmt->execute(['name' => 'cart1', 'id' => $userId]);
     }
 

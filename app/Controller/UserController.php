@@ -15,10 +15,7 @@ class UserController
                 $password = $data['psw'];
                 $repeatPassword = $data['psw-repeat'];
 
-//                require_once '../Model/User.php';
-
-                $userModel = new User();
-                $userModel->create($name, $email, $password);
+                User::create($name, $email, $password);
 
                 $requestData = User::addOneByName($name);
 
@@ -90,11 +87,7 @@ class UserController
                 $login = $data['email'];
                 $password = $data['psw'];
 
-//                require_once '../Model/User.php';
-
-//                $userModel = new User();
                 $requestData = User::addOneByEmail($login);
-
                 if (!empty($requestData)) {
                     if ($password === $requestData->getPassword()) {
                         session_start();
