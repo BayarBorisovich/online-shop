@@ -1,5 +1,5 @@
 <?php
-require_once '../Model/Model.php';
+namespace Model;
 class User extends Model
 {
     private int $id;

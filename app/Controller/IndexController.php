@@ -1,12 +1,18 @@
 <?php
+namespace Controller;
+use Model\Product;
+
 class IndexController
 {
-    public function main(): void
+//    public function getMain(): void
+//    {
+//        require_once '../View/main.phtml';
+//    }
+    public function postMain(): void
     {
         session_start();
         if (isset($_SESSION['user_id'])) {
             $products = Product::getAll();
-            echo 'Добро пожаловать в каталог Online-shop';
         } else {
             header('location: ../Controller/UserController.php');
         }

@@ -1,5 +1,7 @@
 <?php
-require_once '../Model/Model.php';
+namespace Model;
+use PDO;
+
 class CartProduct extends Model
 {
     private int $id;
@@ -19,7 +21,6 @@ class CartProduct extends Model
         $stmt = self::getPDO()->prepare(query: 'INSERT INTO cart_products (cart_id, product_id, quantity) VALUES (:cart_id, :product_id, :quantity)');
         return $stmt->execute(['cart_id' => $cartId, 'product_id' => $productId, 'quantity' => $quantity]);
     }
-
     public function getId(): int
     {
         return $this->id;
