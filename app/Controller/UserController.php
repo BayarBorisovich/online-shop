@@ -15,11 +15,13 @@ class UserController
     public function postRegistration(RegistrationRequest $request): void
     {
         $errors = $request->validate();
+
         if (empty($errors)) {
             $name = $request->getBody()['name'];
             $email = $request->getBody()['email'];
             $password = $request->getBody()['psw'];
             $repeatPassword = $request->getBody()['psw-repeat'];
+//            $hash = password_hash($password, PASSWORD_DEFAULT);
 
             User::create($name, $email, $password);
 
@@ -48,6 +50,7 @@ class UserController
 
             $requestData = User::addOneByEmail($login);
             if (!empty($requestData)) {
+//                password_verify($password, $requestData->getPassword())
                 if ($password === $requestData->getPassword()) {
                     session_start();
                     $_SESSION['user_id'] = $requestData->getId();

@@ -21,6 +21,20 @@ class CartProduct extends Model
         $stmt = self::getPDO()->prepare(query: 'INSERT INTO cart_products (cart_id, product_id, quantity) VALUES (:cart_id, :product_id, :quantity)');
         return $stmt->execute(['cart_id' => $cartId, 'product_id' => $productId, 'quantity' => $quantity]);
     }
+
+    public static function getAll(int $cartId): array
+    {
+        $stmt = self::getPDO()->prepare(query: 'SELECT * FROM cart_products WHERE cart_id = :cart_id');
+        $stmt->execute(['cart_id' => $cartId]);
+        $data = $stmt->fetchAll();
+
+        $arr = [];
+        foreach ($data as $elem) {
+            $arr[] = new self($elem['id'], $elem['cart_id'], $elem['product_id'], $elem['quantity']);
+        }
+        return $arr;
+    }
+
     public function getId(): int
     {
         return $this->id;

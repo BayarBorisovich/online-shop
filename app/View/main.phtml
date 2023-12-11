@@ -1,9 +1,10 @@
 <div class="container">
     <h2>Catalog</h2>
-    <div class="card-deck">
+    <h2 class="card-deck">
+        <a href="/cart" > <h2 class="cart">  Cart  </h2> </a>
         <?php foreach ($products as $product): ?>
 
-            <form action="/add-product" method="post">
+            <form action="/main" method="post">
                 <div class="card text-center">
                     <a href="#">
                         <div class="card-header">
@@ -16,7 +17,7 @@
                             <label for="product_id"></label><input type="text" id="product_id" class="fadeIn second" name="product_id" placeholder="Product-id" hidden="" value="<?php echo $product->getId() ?>">
                             <label for="quantity"></label><input type="text" id="quantity" class="fadeIn third" name="quantity" placeholder="Quantity">
                             <input type="submit" class="fadeIn fourth" value="Add to cart">
-                            <input type="submit" class="fadeIn fourth" value="Cart">
+
                             <div class="card-footer">
                                 <?php echo $product->getPrice() ." р." ?>
                             </div>
@@ -83,5 +84,8 @@
             font-size: 18px;
             background-color: red;
             border-radius:10px;
+        }
+        .cart{
+
         }
     </style>

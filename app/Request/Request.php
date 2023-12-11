@@ -4,14 +4,13 @@ namespace Request;
 class Request
 {
     protected string $method;
-    protected array $headers;
     protected array $body;
-
-    public function __construct(string $method, array $headers = [], array $body = [])
+    protected array $headers;
+    public function __construct(string $method, array $body = [], array $headers = [])
     {
         $this->method = $method;
-        $this->headers = $headers;
         $this->body = $body;
+        $this->headers = $headers;
     }
 
     public function setBody (array $body): void
