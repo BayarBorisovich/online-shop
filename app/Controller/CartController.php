@@ -61,7 +61,16 @@ class CartController
                     $productIds[] = $cartProduct->getProductId();
                 }
                 $products = Product::getAllByIds($productIds);
-//                var_dump($products); die;
+
+                foreach ($products as $product) {
+                    foreach ($cartProducts as $cartProduct) {
+                        if ($cartProduct->getProductId() === $product->getId()) {
+                            $results[] = $product->getPrice();
+                        }
+                    }
+                }
+                $sum = array_sum($results);
+//                var_dump($sum);die;
                 require_once '../View/cart.phtml';
             }
         } else {

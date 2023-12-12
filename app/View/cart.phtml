@@ -1,29 +1,33 @@
 <div class="container">
     <h2>CART</h2>
     <h2 class="card-deck">
+        <a href="/order" > <h2 class="cart">  Оформление заказа  </h2> </a>
+        <div class="total-price1">
+            Общая сумма корзины
+        </div>
+        <input type="submit" class="total-price" value=" <?php  echo $sum . ' р.'?>">
         <?php foreach ($products as $product): ?>
-
-            <form action="/cart" method="post">
-                <div class="card text-center">
-                    <a href="#">
-                        <div class="card-header">
-                            Hit!
+<!--            --><?php //foreach ($cartProducts as $cartProduct):?>
+<!--                 --><?php //if ($cartProduct->getProductId() === $product->getId()): ?>
+                    <form action="/cart" method="post">
+                        <div class="card text-center">
+                            <a href="#">
+                                <img class="card-img-top" src=<?php echo $product->getImageLink() ?> alt="Card image">
+                                <div class="card-body">
+                                    <a href="#"><h2 class="card-title"><?php echo $product->getName() ?></h2></a>
+                                    <label for="product_id"></label><input type="text" id="product_id" class="fadeIn second" name="product_id" placeholder="Product-id" hidden="" value="<?php echo $product->getId() ?>">
+                                    <div class="quantity-price">
+                                        <?php echo $cartProducts[$product->getId()]->getQuantity() . ' шт.'; ?>
+                                    </div>
+                                    <div class="card-footer">
+                                        <?php echo 'цена ' . $product->getPrice()*$cartProducts[$product->getId()]->getQuantity()." р." ?>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
-                        <img class="card-img-top" src=<?php echo $product->getImageLink() ?> alt="Card image">
-                        <div class="card-body">
-                            <a href="#"><h2 class="card-title"><?php echo $product->getName() ?></h2></a>
-                            <a href="#"><h4 class="card-title"><?php echo $product->getDescription() ?></h4></a>
-                            <label for="product_id"></label><input type="text" id="product_id" class="fadeIn second" name="product_id" placeholder="Product-id" hidden="" value="<?php echo $product->getId() ?>">
-                            <label for="quantity"></label><input type="text" id="quantity" class="fadeIn third" name="quantity" placeholder="Quantity">
-                            <input type="submit" class="fadeIn fourth" value="Add to cart">
-
-                            <div class="card-footer">
-                                <?php echo $product->getPrice() ." р." ?>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </form>
+                    </form>
+<!--                 --><?php //endif; ?>
+<!--            --><?php //endforeach; ?>
         <?php endforeach; ?>
 </div>
 <style>
@@ -69,22 +73,38 @@
         transition: 0.2s;
     }
 
-    .card-header {
+    .card-footer{
+        position: marker;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        background-color: blue;
+        /*border-radius:10px;*/
+    }
+    .total-price{
+        font-size: 30px;
+        color: blue;
+        font-weight: bold;
+    }
+    .total-price1 {
+        position: marker;
         font-size: 13px;
         color: greenyellow;
         font-weight: bold;
         background-color: blue;
     }
-
-    .card-footer{
-        position: absolute;
-        color: black;
+    .quantity-price {
+        font-size: 25px;
+        color: white;
         font-weight: bold;
-        font-size: 18px;
-        background-color: red;
-        border-radius:10px;
+        background-color: blue;
     }
-    .cart{
-
-    }
+    /*.order {*/
+    /*    position: marker;*/
+    /*    font-size: 20px;*/
+    /*    color: white;*/
+    /*    font-weight: bold;*/
+    /*    background-color: green;*/
+    /*    border-radius:10px;*/
+    /*}*/
 </style>
