@@ -6,6 +6,7 @@ use Controller\OrderController;
 use Controller\UserController;
 use Request\AddProductRequest;
 use Request\LoginRequest;
+use Request\OrderRegistrationRequest;
 use Request\RegistrationRequest;
 use Request\Request;
 
@@ -61,7 +62,7 @@ class App
             'GET' => [
                 'class' => CartController::class,
                 'method' => 'getCart'
-            ]
+            ],
         ],
         '/order' => [
             'GET' => [
@@ -70,11 +71,12 @@ class App
             ],
             'POST' => [
                 'class' => OrderController::class,
-                'method' => 'getOrderForm',
-            ]
-        ]
+                'method' => 'orderRegistration',
+                'request' => OrderRegistrationRequest::class
+            ],
+        ],
     ];
-    public function run()
+    public function run(): void
     {
         $requestUri = $_SERVER['REQUEST_URI'];
 

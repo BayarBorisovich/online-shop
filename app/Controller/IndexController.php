@@ -15,8 +15,5 @@ class IndexController
         }
         require_once '../View/main.phtml';
     }
-    public function postMain(): void
-    {
 
-    }
 }

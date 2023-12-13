@@ -34,7 +34,7 @@ class Product extends Model
             $result[] = $elem;
         }
         $results = implode(', ', $result);
-        $stmt = self::getPDO()->prepare( 'SELECT * FROM products WHERE id IN (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
+        $stmt = self::getPDO()->prepare( "SELECT * FROM products WHERE id IN ($results)");
         $stmt->execute($ids);
         $data = $stmt->fetchAll();
 

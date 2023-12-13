@@ -1,41 +1,41 @@
 <div class="container">
-    <h2>CART</h2>
+    <h2>КОРЗИНА</h2>
     <h2 class="card-deck">
-        <a href="/order" > <h2 class="cart">  Оформление заказа  </h2> </a>
-        <div class="total-price1">
-            Общая сумма корзины
-        </div>
-        <input type="submit" class="total-price" value=" <?php  echo $sum . ' р.'?>">
         <?php foreach ($products as $product): ?>
-<!--            --><?php //foreach ($cartProducts as $cartProduct):?>
-<!--                 --><?php //if ($cartProduct->getProductId() === $product->getId()): ?>
+            <?php foreach ($cartProducts as $cartProduct):?>
+                 <?php if ($cartProduct->getProductId() === $product->getId()): ?>
                     <form action="/cart" method="post">
                         <div class="card text-center">
                             <a href="#">
+                                <div class="card-header">
+                                    .
+                                </div>
                                 <img class="card-img-top" src=<?php echo $product->getImageLink() ?> alt="Card image">
                                 <div class="card-body">
-                                    <a href="#"><h2 class="card-title"><?php echo $product->getName() ?></h2></a>
+                                    <a href="#"><h3 class="card-title"><?php echo $product->getName() ?></h3></a>
                                     <label for="product_id"></label><input type="text" id="product_id" class="fadeIn second" name="product_id" placeholder="Product-id" hidden="" value="<?php echo $product->getId() ?>">
                                     <div class="quantity-price">
-                                        <?php echo $cartProducts[$product->getId()]->getQuantity() . ' шт.'; ?>
+                                        <?php echo $cartProduct->getQuantity() . ' шт.'; ?>
                                     </div>
                                     <div class="card-footer">
-                                        <?php echo 'цена ' . $product->getPrice()*$cartProducts[$product->getId()]->getQuantity()." р." ?>
+                                        <?php echo 'цена ' . $product->getPrice()*$cartProduct->getQuantity()." р." ?>
                                     </div>
                                 </div>
                             </a>
                         </div>
                     </form>
-<!--                 --><?php //endif; ?>
-<!--            --><?php //endforeach; ?>
+                 <?php endif; ?>
+            <?php endforeach; ?>
         <?php endforeach; ?>
+        <input type="submit" class="total-price" value=" <?php  echo 'Итого: ' . $sumTotalCart . ' р.'?>">
+        <a href="/order" > <h3 class="cart">  оформите заказ  </h3> </a>
 </div>
 <style>
     body {
         font-style: normal;display:flex;
         justify-content: center;
-        /*align-items: center;*/
-        margin:100px auto;
+        align-items: center;
+        margin:50px auto;
     }
 
     a {
@@ -61,11 +61,11 @@
     }
 
     h3 {
-        line-height: 5em;
+        line-height: 50px;
     }
 
     .card {
-        max-width: 16rem;
+        max-width: 23rem;
     }
 
     .card:hover {
@@ -73,25 +73,19 @@
         transition: 0.2s;
     }
 
+
     .card-footer{
-        position: marker;
-        color: white;
+        position: absolute;
+        color: black;
         font-weight: bold;
         font-size: 18px;
-        background-color: blue;
-        /*border-radius:10px;*/
+        background-color: red;
+        border-radius:10px;
     }
     .total-price{
         font-size: 30px;
         color: blue;
         font-weight: bold;
-    }
-    .total-price1 {
-        position: marker;
-        font-size: 13px;
-        color: greenyellow;
-        font-weight: bold;
-        background-color: blue;
     }
     .quantity-price {
         font-size: 25px;
@@ -107,4 +101,12 @@
     /*    background-color: green;*/
     /*    border-radius:10px;*/
     /*}*/
+    .cart{
+        font-size: 25px;
+        position: marker;
+        color: blue;
+        font-weight: bold;
+        /*background-color: blue;*/
+        border-radius:30px;
+    }
 </style>

@@ -1,280 +1,308 @@
-<!------ Copyright ------
-Designed by: Emily Feng
-Dribbble: https://dribbble.com/emilyfeng
-Developed by Yago Rocha for educational purpose
--->
+<div id="clouds">
+    <div class="cloud x1"></div>
+    <!-- Time for multiple clouds to dance around -->
+    <div class="cloud x2"></div>
+    <div class="cloud x3"></div>
+    <div class="cloud x4"></div>
+    <div class="cloud x5"></div>
+</div>
 
-<div class="wrapper">
-    <div class="container">
+<div class="container">
+
+
+    <div id="login">
+
         <form action="/order" method="post">
-            <h1>
-                <i class="fas fa-shipping-fast"></i>
-                Shipping Details
-            </h1>
-            <div class="name">
-                <div>
-                    <label for="f-name">First</label>
-                    <label>
-                        <input type="text" name="f-name">
-                    </label>
-                </div>
-                <div>
-                    <label for="l-name">Last</label>
-                    <label>
-                        <input type="text" name="l-name">
-                    </label>
-                </div>
-            </div>
-            <div class="street">
-                <label for="name">Street</label>
-                <label>
-                    <input type="text" name="address">
-                </label>
-            </div>
-            <div class="address-info">
-                <div>
-                    <label for="city">City</label>
-                    <label>
-                        <input type="text" name="city">
-                    </label>
-                </div>
-                <div>
-                    <label for="state">State</label>
-                    <label>
-                        <input type="text" name="state">
-                    </label>
-                </div>
-                <div>
-                    <label for="zip">Zip</label>
-                    <label>
-                        <input type="text" name="zip">
-                    </label>
-                </div>
-            </div>
-            <h1>
-                <i class="far fa-credit-card"></i> Payment Information
-            </h1>
-            <div class="cc-num">
-                <label for="card-num">Credit Card No.</label>
-                <label>
-                    <input type="text" name="card-num">
-                </label>
-            </div>
-            <div class="cc-info">
-                <div>
-                    <label for="card-num">Exp</label>
-                    <label>
-                        <input type="text" name="expire">
-                    </label>
-                </div>
-                <div>
-                    <label for="card-num">CCV</label>
-                    <label>
-                        <input type="text" name="security">
-                    </label>
-                </div>
-            </div>
-            <div class="btns">
-                <button>Purchase</button>
-                <button>Back to cart</button>
-            </div>
+
+            <fieldset class="clearfix">
+                <?php if(isset($errors)): ?>
+                    <label style="color: red"> <?php echo $errors['name']; ?></label>
+                <?php endif; ?>
+                <p><span class="fontawesome-user"></span><input type="text" value="Name" onBlur="if(this.value == '') this.value = 'Username'" onFocus="if(this.value == 'Name') this.value = ''" required></p> <!-- JS because of IE support; better: placeholder="Username" -->
+                <?php if(isset($errors)): ?>
+                    <label style="color: red"> <?php echo $errors['surname']; ?></label>
+                <?php endif; ?>
+                <p><span class="fontawesome-user"></span><input type="text" value="Surname" onBlur="if(this.value == '') this.value = 'Username'" onFocus="if(this.value == 'Surname') this.value = ''" required></p> <!-- JS because of IE support; better: placeholder="Username" -->
+                <?php if(isset($errors)): ?>
+                    <label style="color: red"> <?php echo $errors['patronymic']; ?></label>
+                <?php endif; ?>
+                <p><span class="fontawesome-user"></span><input type="text" value="Patronymic" onBlur="if(this.value == '') this.value = 'Username'" onFocus="if(this.value == 'Patronymic') this.value = ''" required></p> <!-- JS because of IE support; better: placeholder="Username" -->
+                <?php if(isset($errors)): ?>
+                    <label style="color: red"> <?php echo $errors['city']; ?></label>
+                <?php endif; ?>
+                <p><span class="fontawesome-user"></span><input type="text" value="City" onBlur="if(this.value == '') this.value = 'Username'" onFocus="if(this.value == 'City') this.value = ''" required></p> <!-- JS because of IE support; better: placeholder="Username" -->
+                <?php if(isset($errors)): ?>
+                    <label style="color: red"> <?php echo $errors['street']; ?></label>
+                <?php endif; ?>
+                <p><span class="fontawesome-user"></span><input type="text" value="Street" onBlur="if(this.value == '') this.value = 'Username'" onFocus="if(this.value == 'Street') this.value = ''" required></p> <!-- JS because of IE support; better: placeholder="Username" -->
+                <?php if(isset($errors)): ?>
+                    <label style="color: red"> <?php echo $errors['house']; ?></label>
+                <?php endif; ?>
+                <p><span class="fontawesome-user"></span><input type="text" value="House" onBlur="if(this.value == '') this.value = 'Username'" onFocus="if(this.value == 'House') this.value = ''" required></p> <!-- JS because of IE support; better: placeholder="Username" -->
+                <p><input type="submit" value="Оформить заказ"></p>
+
+            </fieldset>
+
         </form>
-    </div>
+
+<!--        <p>Not a member? <a href="#" class="blue">Sign up now</a><span class="fontawesome-arrow-right"></span></p>-->
+
+    </div> <!-- end login -->
+
 </div>
 <style>
-    @import url('https://fonts.googleapis.com/css?family=Arimo');
-    $coral: #eb9478;
-    $maroon: #8e2807;
-    $title: #493b76;
+    /* CSS Document */
+    /* ---------- FONTAWESOME ---------- */
+    /* ---------- https://fortawesome.github.com/Font-Awesome/ ---------- */
+    /* ---------- http://weloveiconfonts.com/ ---------- */
+    @import url(http://weloveiconfonts.com/api/?family=fontawesome);
+    /* ---------- ERIC MEYER'S RESET CSS ---------- */
+    /* ---------- https://meyerweb.com/eric/tools/css/reset/ ---------- */
+    @import url(https://meyerweb.com/eric/tools/css/reset/reset.css);
+    /* ---------- FONTAWESOME ---------- */
+    [class*="fontawesome-"]:before {
+        font-family: 'FontAwesome', sans-serif;
+    }
+
+    /* ---------- GENERAL ---------- */
+    * {
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    *:before, *:after {
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
 
     body {
-        display: flex;
-        justify-content: center;
+        background: #2c3338;
+        color: #606468;
+        font: 87.5%/1.5em 'Open Sans', sans-serif;
+        margin: 0;
+        overflow-y:auto !important;
+        overflow-x:hidden !important;
     }
 
-    .wrapper {
-        margin-top: 5%;
-        width: 60%;
-        display: flex;
-        justify-content: center;
-        font-family: "Arimo", serif;
-        background-color: $coral;
-        -webkit-box-shadow: 9px 13px 25px 0 rgba(0, 0, 0, 0.18);
-        -moz-box-shadow: 9px 13px 25px 0px rgba(0, 0, 0, 0.18);
-        box-shadow: 9px 13px 25px 0px rgba(0, 0, 0, 0.18);
-        animation: slideUp 2000ms ease;
+    a {
+        color: #eee;
+        text-decoration: none;
     }
 
-    @keyframes slideUp {
-        0% {
-            -webkit-transform: translateY(100%);
-            transform: translateY(100%);
-            visibility: visible;
-        }
+    a:hover {
+        text-decoration: underline;
+    }
 
-        100% {
-            -webkit-transform: translateY(0);
-            transform: translateY(0);
+    input {
+        border: none;
+        font-family: 'Open Sans', Arial, sans-serif;
+        font-size: 14px;
+        line-height: 1.5em;
+        padding: 0;
+        -webkit-appearance: none;
+    }
 
-        }
+    p {
+        line-height: 1.5em;
+    }
+
+    .clearfix {
+        *zoom: 1;
+    }
+    .clearfix:before, .clearfix:after {
+        content: ' ';
+        display: table;
+    }
+    .clearfix:after {
+        clear: both;
     }
 
     .container {
-        width: 65%;
-        padding: 5% 10%;
+        left: 50%;
+        position:absolute;
+        top: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
     }
 
-    h1 {
-        align-self: center;
+    /* ---------- LOGIN ---------- */
+    #login {
+        width: 280px;
     }
 
-    form {
-        width: 100%;
-
-        >* {
-            margin-top: 20px;
-        }
-
-        input {
-            width: 100%;
-            min-height: 25px;
-            border: 0;
-            font-size: 1rem;
-            letter-spacing: .15rem;
-            font-family: "Arimo", serif;
-            margin-top: 5px;
-            color: $maroon;
-            border-radius: 4px;
-        }
-
-        label {
-            text-transform: uppercase;
-            font-size: 12px;
-            letter-spacing: 2px;
-            color: $maroon;
-        }
-
-        h1 {
-            font-size: 24px;
-            line-height: 10px;
-            color: $title;
-            letter-spacing: 1px;
-        }
-
-        h1:nth-of-type(2) {
-            margin-top: 10%;
-        }
+    #login form span {
+        background-color: #363b41;
+        border-radius: 3px 0px 0px 3px;
+        color: #606468;
+        display: block;
+        float: left;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        width: 50px;
     }
 
-    .name {
-        justify-content: space-between;
-        display: flex;
-        width: 100%;
-
-        div {
-            width: 45%;
-        }
+    #login form input {
+        height: 50px;
     }
 
-    .address-info {
-        display: flex;
-        justify-content: space-between;
-
-        div {
-            width: 30%;
-        }
+    #login form input[type="text"], input[type="password"] {
+        background-color: #3b4148;
+        border-radius: 0px 3px 3px 0px;
+        color: #606468;
+        margin-bottom: 1em;
+        padding: 0 16px;
+        width: 230px;
     }
 
-    .cc-info {
-        display: flex;
-        justify-content: space-between;
-
-        div {
-            width: 45%;
-        }
+    #login form input[type="submit"] {
+        border-radius: 3px;
+        -moz-border-radius: 3px;
+        -webkit-border-radius: 3px;
+        background-color: #ea4c88;
+        color: #eee;
+        font-weight: bold;
+        margin-bottom: 2em;
+        text-transform: uppercase;
+        width: 280px;
     }
 
-    .btns {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-
-        button {
-            margin: 3px 0;
-            height: 30px;
-            width: 40%;
-            color: #cfc9e1;
-            background-color: #4a3b76;
-            text-transform: uppercase;
-            border: 0;
-            border-radius: .3rem;
-            letter-spacing: 2px;
-
-            &:hover {
-                animation-name: btn-hov;
-                animation-duration: 550ms;
-                animation-fill-mode: forwards;
-            }
-        }
+    #login form input[type="submit"]:hover {
+        background-color: #d44179;
     }
 
-    @keyframes btn-hov {
-        100% {
-            background-color: #cfc9e1;
-            color: #4a3b76;
-            transform: scale(1.05)
-        }
+    #login > p {
+        text-align: center;
     }
 
-    input:focus,
-    button:focus {
-        outline: none;
+    #login > p span {
+        padding-left: 5px;
     }
 
-    @media (max-width: 736px) {
-        .wrapper {
-            width: 100%;
-        }
+    /*Lets start with the cloud formation rather*/
 
-        .container {
-            width: 100%;
-        }
+    /*The container will also serve as the SKY*/
 
-        .btns {
-            align-items: center;
+    *{ margin: 0; padding: 0;}
 
-            button {
-                width: 50%;
-            }
-        }
-
-        form h1 {
-            text-align: center;
-        }
-
-        .name,
-        .address-info,
-        .cc-info {
-            flex-direction: column;
-            width: 100%;
-            justify-content: space-between;
-
-            div {
-                align-items: center;
-                flex-direction: column;
-                width: 100%;
-                display: flex;
-            }
-        }
-
-        .street,
-        .cc-num {
-            text-align: center;
-        }
-
-        input {
-            margin: 5px 0;
-            min-height: 30px;
-        }
+    #clouds{
+        padding: 50px 0;
+        background: #c9dbe9;
+        background: -webkit-linear-gradient(top, #c9dbe9 0%, #fff 100%);
+        background: -linear-gradient(top, #c9dbe9 0%, #fff 100%);
+        background: -moz-linear-gradient(top, #c9dbe9 0%, #fff 100%);
     }
+
+    /*Time to finalise the cloud shape*/
+    .cloud {
+        width: 200px; height: 60px;
+        background: #fff;
+
+        border-radius: 200px;
+        -moz-border-radius: 200px;
+        -webkit-border-radius: 200px;
+
+        position: relative;
+    }
+
+    .cloud:before, .cloud:after {
+        content: '';
+        position: absolute;
+        background: #fff;
+        width: 100px; height: 80px;
+        position: absolute; top: -15px; left: 10px;
+
+        border-radius: 100px;
+        -moz-border-radius: 100px;
+        -webkit-border-radius: 100px;
+
+        -webkit-transform: rotate(30deg);
+        transform: rotate(30deg);
+        -moz-transform: rotate(30deg);
+    }
+
+    .cloud:after {
+        width: 120px; height: 120px;
+        top: -55px; left: auto; right: 15px;
+    }
+
+    /*Time to animate*/
+    .x1 {
+        -webkit-animation: moveclouds 15s linear infinite;
+        -moz-animation: moveclouds 15s linear infinite;
+        -o-animation: moveclouds 15s linear infinite;
+    }
+
+    /*variable speed, opacity, and position of clouds for realistic effect*/
+    .x2 {
+        left: 200px;
+
+        -webkit-transform: scale(0.6);
+        -moz-transform: scale(0.6);
+        transform: scale(0.6);
+        opacity: 0.6; /*opacity proportional to the size*/
+
+        /*Speed will also be proportional to the size and opacity*/
+        /*More the speed. Less the time in 's' = seconds*/
+        -webkit-animation: moveclouds 25s linear infinite;
+        -moz-animation: moveclouds 25s linear infinite;
+        -o-animation: moveclouds 25s linear infinite;
+    }
+
+    .x3 {
+        left: -250px; top: -200px;
+
+        -webkit-transform: scale(0.8);
+        -moz-transform: scale(0.8);
+        transform: scale(0.8);
+        opacity: 0.8; /*opacity proportional to the size*/
+
+        -webkit-animation: moveclouds 20s linear infinite;
+        -moz-animation: moveclouds 20s linear infinite;
+        -o-animation: moveclouds 20s linear infinite;
+    }
+
+    .x4 {
+        left: 470px; top: -250px;
+
+        -webkit-transform: scale(0.75);
+        -moz-transform: scale(0.75);
+        transform: scale(0.75);
+        opacity: 0.75; /*opacity proportional to the size*/
+
+        -webkit-animation: moveclouds 18s linear infinite;
+        -moz-animation: moveclouds 18s linear infinite;
+        -o-animation: moveclouds 18s linear infinite;
+    }
+
+    .x5 {
+        left: -150px; top: -150px;
+
+        -webkit-transform: scale(0.8);
+        -moz-transform: scale(0.8);
+        transform: scale(0.8);
+        opacity: 0.8; /*opacity proportional to the size*/
+
+        -webkit-animation: moveclouds 20s linear infinite;
+        -moz-animation: moveclouds 20s linear infinite;
+        -o-animation: moveclouds 20s linear infinite;
+    }
+
+    @-webkit-keyframes moveclouds {
+        0% {margin-left: 1000px;}
+        100% {margin-left: -1000px;}
+    }
+    @-moz-keyframes moveclouds {
+        0% {margin-left: 1000px;}
+        100% {margin-left: -1000px;}
+    }
+    @-o-keyframes moveclouds {
+        0% {margin-left: 1000px;}
+        100% {margin-left: -1000px;}
+    }
+    .bottom {
+        width:100%; margin:0 auto; text-align:center; padding:10px 0; height:100px; position:absolute;
+    }
+    .bottom h3 {color:white; font-size:30px; font-weight:bold; margin-top:45px; padding-bottom:45px;}
+    .blue { color:#09c;}
 </style>

@@ -1,14 +1,14 @@
 <div class="container">
-    <h2>Catalog</h2>
+    <h2>КАТАЛОГ</h2>
     <h2 class="card-deck">
-        <a href="/cart" > <h2 class="cart">  Корзина  </h2> </a>
+        <a href="/cart" > <h3 class="cart">  Корзина  </h3> </a>
         <?php foreach ($products as $product): ?>
 
             <form action="/main" method="post">
                 <div class="card text-center">
                     <a href="#">
                         <div class="card-header">
-                            Hit!
+                            .
                         </div>
                         <img class="card-img-top" src=<?php echo $product->getImageLink() ?> alt="Card image">
                         <div class="card-body">
@@ -16,7 +16,7 @@
                             <a href="#"><h4 class="card-title"><?php echo $product->getDescription() ?></h4></a>
                             <label for="product_id"></label><input type="text" id="product_id" class="fadeIn second" name="product_id" placeholder="Product-id" hidden="" value="<?php echo $product->getId() ?>">
                             <label for="quantity"></label><input type="text" id="quantity" class="fadeIn third" name="quantity" placeholder="Quantity">
-                            <input type="submit" class="fadeIn fourth" value="Add to cart">
+                            <input type="submit" class="fadeIn fourth" value="Добавить в корзину">
 
                             <div class="card-footer">
                                 <?php echo $product->getPrice() ." р." ?>
@@ -31,8 +31,8 @@
         body {
             font-style: normal;display:flex;
             justify-content: center;
-            /*align-items: center;*/
-            margin:100px auto;
+            align-items: center;
+            margin:50px auto;
         }
 
         a {
@@ -58,11 +58,11 @@
         }
 
         h3 {
-            line-height: 5em;
+            line-height: 2px;
         }
 
         .card {
-            max-width: 16rem;
+            max-width: 23rem;
         }
 
         .card:hover {
@@ -86,6 +86,11 @@
             border-radius:10px;
         }
         .cart{
-
+            font-size: 25px;
+            position: marker;
+            color: blue;
+            font-weight: bold;
+            /*background-color: blue;*/
+            border-radius:30px;
         }
     </style>
