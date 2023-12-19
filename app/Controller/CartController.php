@@ -7,12 +7,9 @@ use Request\AddProductRequest;
 
 class CartController
 {
-    public function getAddProduct(): void
-    {
-        require_once '../Controller/IndexController.php';
-    }
     public function postAddProduct(AddProductRequest $request): void
     {
+
         $errors = $request->validate();
 
         if (empty($errors)) {
@@ -44,38 +41,33 @@ class CartController
     }
     public function getCart(): void
     {
-        $requestMethod = $_SERVER['REQUEST_METHOD'];
+        session_start();
+        if (isset($_SESSION['user_id'])) {
+            $userId = $_SESSION['user_id'];
 
-        if ($requestMethod === 'GET') {
+            $cart = Cart::getOne($userId);
+            $cartId = $cart->getId();
+            $cartProducts = CartProduct::getAll($cartId); // все продукты в корзине у пользователя
 
-            session_start();
-            if (isset($_SESSION['user_id'])) {
-                $userId = $_SESSION['user_id'];
+            $productIds = [];
+            foreach ($cartProducts as $cartProduct) {
+                $productIds[] = $cartProduct->getProductId();
+            }
+            $products = Product::getAllByIds($productIds); // продукты пользователя
 
-                $cart = Cart::getOne($userId);
-                $cartId = $cart->getId();
-                $cartProducts = CartProduct::getAll($cartId); // все продукты у пользователя
-
-                $productIds = [];
+            foreach ($products as $product) {
                 foreach ($cartProducts as $cartProduct) {
-                    $productIds[] = $cartProduct->getProductId();
-                }
-                $products = Product::getAllByIds($productIds);
+                    if ($cartProduct->getProductId() === $product->getId()) {
+                        $sumPrice[] = $product->getPrice()*$cartProduct->getQuantity();
+//                        $productUser[] = $product->getName();
 
-                foreach ($products as $product) {
-                    foreach ($cartProducts as $cartProduct) {
-                        if ($cartProduct->getProductId() === $product->getId()) {
-                            $sumPrice[] = $product->getPrice()*$cartProduct->getQuantity();
-                        }
                     }
                 }
-//                var_dump($q);die;
-                $sumTotalCart = array_sum($sumPrice); // Общая сумма корзины;
-//                var_dump($sum);die;
-                require_once '../View/cart.phtml';
             }
-        } else {
-            header('location: /main');
+//            var_dump($productUser);die;
+            $sumTotalCart = array_sum($sumPrice); // Общая сумма корзины;
+//                var_dump($products);die;
+            require_once '../View/cart.phtml';
         }
 
     }

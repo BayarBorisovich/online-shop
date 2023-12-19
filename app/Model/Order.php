@@ -1,43 +1,40 @@
 <?php
 namespace Model;
+use PDO;
+
 class Order extends Model
 {
-    private string $name;
-    private string $surname;
-    private string $patronymic;
+    private int $id;
+    private string $telephone;
     private string $city;
     private string $street;
     private string $house;
-    public function __construct(string $name, string $surname, string $patronymic, string $city, string $street, string $house)
+    private string $comments;
+    public function __construct(int $id, string $telephone, string $city, string $street, string $house, string $comments = null)
     {
-        $this->name = $name;
-        $this->surname = $surname;
-        $this->patronymic = $patronymic;
+        $this->id = $id;
+        $this->telephone = $telephone;
         $this->city = $city;
         $this->street = $street;
         $this->house = $house;
+        $this->comments = $comments;
     }
-    public static function creatOrders(string $name, string $surname, string $patronymic, string $city, string $street, string $house, int $userId): bool
+    public static function creatOrders(string $userId, string $telephone, string $city, string $street, string $house, string $comments,): bool
     {
-        $stmt = self::getPDO()->prepare(query: 'INSERT INTO orders (name, surname, patronymic, city, street, house, user_id) VALUES (:name, :surname, :patronymic, :city, :street, :house, :user_id)');
-        return $stmt->execute(['name' => $name, 'surname' => $surname, 'patronymic' => $patronymic, 'city' => $city, 'street' => $street, 'house' => $house, 'user_id' => $userId]);
+        $stmt = self::getPDO()->prepare(query: 'INSERT INTO orders (user_id, telephone, city, street, house, comments) VALUES (:user_id, :telephone, :city, :street, :house, :comments)');
+        return $stmt->execute(['user_id' => $userId, 'telephone' => $telephone, 'city' => $city, 'street' => $street, 'house' => $house, 'comments' => $comments]);
     }
-
-    public function getName(): string
+    public static function getOne(int $userId): Order|null
     {
-        return $this->name;
-    }
+        $stmt = self::getPDO()->prepare(query: 'SELECT * FROM orders WHERE user_id = :user_id');
+        $stmt->execute(['user_id' => $userId]);
+        $data = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    public function getSurname(): string
-    {
-        return $this->surname;
+        if (empty($data)) {
+            return null;
+        }
+        return new self($data['id'], $data['telephone'], $data['city'], $data['street'], $data['house'], $data['comments'], );
     }
-
-    public function getPatronymic(): string
-    {
-        return $this->patronymic;
-    }
-
     public function getCity(): string
     {
         return $this->city;
@@ -51,5 +48,20 @@ class Order extends Model
     public function getHouse(): string
     {
         return $this->house;
+    }
+
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    public function getTelephone(): string
+    {
+        return $this->telephone;
+    }
+
+    public function getComments(): string
+    {
+        return $this->comments;
     }
 }

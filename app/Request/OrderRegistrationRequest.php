@@ -5,29 +5,13 @@ class OrderRegistrationRequest extends Request
     public function validate(): array
     {
         $errors = [];
-        if (isset($this->body['name'])) {
-           $name = $this->body['name'];
-           if (empty($name)) {
-               $errors['name'] = 'Заполните поле name';
+        if (isset($this->body['telephone'])) {
+            $telephone = $this->body['telephone'];
+           if (empty($telephone)) {
+               $errors['telephone'] = 'Заполните поле telephone';
            }
         } else {
-            $errors['name'] = 'Заполните поле name';
-        }
-        if (isset($this->body['surname'])) {
-            $surname = $this->body['surname'];
-            if (empty($surname)) {
-                $errors['surname'] = 'Заполните поле surname';
-            }
-        } else {
-            $errors['surname'] = 'Заполните поле surname';
-        }
-        if (isset($this->body['patronymic'])) {
-            $patronymic = $this->body['patronymic'];
-            if (empty($patronymic)) {
-                $errors['patronymic'] = 'Заполните поле patronymic';
-            }
-        } else {
-            $errors['patronymic'] = 'Заполните поле patronymic';
+            $errors['telephone'] = 'Заполните поле telephone';
         }
         if (isset($this->body['city'])) {
             $city = $this->body['city'];

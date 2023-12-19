@@ -3,6 +3,7 @@
 use Controller\CartController;
 use Controller\IndexController;
 use Controller\OrderController;
+use Controller\OrderItemsController;
 use Controller\UserController;
 use Request\AddProductRequest;
 use Request\LoginRequest;
@@ -12,7 +13,7 @@ use Request\Request;
 
 class App
 {
-    private array $routes = [
+    private array $routes = [ // свойство
         '/registration' => [
             'GET' => [
                 'class' => UserController::class,
@@ -47,17 +48,6 @@ class App
                 'request' => AddProductRequest::class,
             ],
         ],
-//    '/add-product' => [
-//        'GET' => [
-//            'class' => CartController::class,
-//            'method' => 'getAddProduct'
-//        ],
-//        'POST' => [
-//            'class' => CartController::class,
-//            'method' => 'postAddProduct',
-//            'request' => AddProductRequest::class,
-//        ],
-//    ],
         '/cart' => [
             'GET' => [
                 'class' => CartController::class,
@@ -75,8 +65,14 @@ class App
                 'request' => OrderRegistrationRequest::class
             ],
         ],
+        '/order-items' => [
+            'GET' => [
+                'class' => OrderController::class,
+                'method' => 'getOrderItems',
+            ],
+        ],
     ];
-    public function run(): void
+    public function run(): void // запустить
     {
         $requestUri = $_SERVER['REQUEST_URI'];
 

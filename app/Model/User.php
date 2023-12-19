@@ -21,7 +21,7 @@ class User extends Model
         return $stmt->execute(['name' => $name, 'email' => $email, 'password' => $password]);
     }
 
-    public static function addOneByName( $name): User|null
+    public static function getOneByName( $name): User|null
     {
         $stmt = self::getPDO()->prepare(query: 'SELECT * FROM users WHERE name = :name');
         $stmt->execute(['name' => $name]);

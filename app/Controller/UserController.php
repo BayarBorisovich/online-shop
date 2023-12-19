@@ -21,9 +21,9 @@ class UserController
             $email = $request->getBody()['email'];
             $password = $request->getBody()['psw'];
             $repeatPassword = $request->getBody()['psw-repeat'];
-//            $hash = password_hash($password, PASSWORD_DEFAULT);
+            $hash = password_hash($password, PASSWORD_DEFAULT);
 
-            User::create($name, $email, $password);
+            User::create($name, $email, $hash);
 
             $requestData = User::addOneByName($name);
 
@@ -50,11 +50,12 @@ class UserController
 
             $requestData = User::addOneByEmail($login);
             if (!empty($requestData)) {
-//                password_verify($password, $requestData->getPassword())
-                if ($password === $requestData->getPassword()) {
+
+                if (password_verify($password, $requestData->getPassword())) {
                     session_start();
                     $_SESSION['user_id'] = $requestData->getId();
                     header('location: /main');
+//                    require_once '../View/login.phtml';
                 } else {
                     $errors['login'] = 'логин или пароль введены не верно';
                 }
@@ -63,5 +64,6 @@ class UserController
             }
         }
         require_once '../View/login.phtml';
+
     }
 }
