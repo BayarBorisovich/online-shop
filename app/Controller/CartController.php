@@ -59,14 +59,11 @@ class CartController
                 foreach ($cartProducts as $cartProduct) {
                     if ($cartProduct->getProductId() === $product->getId()) {
                         $sumPrice[] = $product->getPrice()*$cartProduct->getQuantity();
-//                        $productUser[] = $product->getName();
 
                     }
                 }
             }
-//            var_dump($productUser);die;
             $sumTotalCart = array_sum($sumPrice); // Общая сумма корзины;
-//                var_dump($products);die;
             require_once '../View/cart.phtml';
         }
 

@@ -21,7 +21,7 @@ class User extends Model
         return $stmt->execute(['name' => $name, 'email' => $email, 'password' => $password]);
     }
 
-    public static function getOneByName( $name): User|null
+    public static function getOneByName(string $name): User|null
     {
         $stmt = self::getPDO()->prepare(query: 'SELECT * FROM users WHERE name = :name');
         $stmt->execute(['name' => $name]);
@@ -37,6 +37,18 @@ class User extends Model
     {
         $stmt = self::getPDO()->prepare("SELECT * FROM users WHERE email=:email");
         $stmt->execute(['email' => $login]);
+        $data = $stmt->fetch();
+
+        if (empty($data)) {
+            return null;
+        }
+        return new self($data['id'], $data['name'], $data['email'], $data['password']);
+
+    }
+    public static function addOneById($userId): User|null
+    {
+        $stmt = self::getPDO()->prepare("SELECT * FROM users WHERE id=:id");
+        $stmt->execute(['id' => $userId]);
         $data = $stmt->fetch();
 
         if (empty($data)) {

@@ -25,7 +25,7 @@ class UserController
 
             User::create($name, $email, $hash);
 
-            $requestData = User::addOneByName($name);
+            $requestData = User::getOneByName($name);
 
             header("location: /login");
         }

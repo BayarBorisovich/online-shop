@@ -4,11 +4,11 @@ class OrdersItem extends Model
 {
     private int $id;
     private int $orderId;
-    private string $productId;
-    private string $quantity;
+    private int $productId;
+    private int $quantity;
     private int $price;
 
-    public function __construct(int $id, int $orderId, string $productId, string $quantity, int $price)
+    public function __construct(int $id, int $orderId, int $productId, int $quantity, int $price)
     {
         $this->id = $id;
         $this->orderId = $orderId;
@@ -16,23 +16,29 @@ class OrdersItem extends Model
         $this->quantity = $quantity;
         $this->price = $price;
     }
-    public static function addOrdersItems(int $orderId, array $productId, array $quantity, int $price): bool
+    public static function addOrdersItems(int $orderId, array $cartProducts, array $arrayOfPrices): bool
     {
-        $productId = implode(', ', $productId);
-        $quantity = implode(', ', $quantity);
         $stmt = self::getPDO()->prepare(query: 'INSERT INTO orders_items (order_id, product_id, quantity, price) VALUES (:order_id, :product_id, :quantity, :price)');
-        return $stmt->execute(['order_id' => $orderId, 'product_id' => $productId, 'quantity' => $quantity, 'price' => $price]);
+
+        foreach ($cartProducts as $cartProduct) {
+            foreach ($arrayOfPrices as $id => $price) {
+                if ($cartProduct->getProductId() === $id) {
+                    $result = $stmt->execute(['order_id' => $orderId, 'product_id' => $cartProduct->getProductId(), 'quantity' => $cartProduct->getQuantity(), 'price' => $price]);
+                }
+            }
+        }
+        return $result;
     }
-    public static function getOrdersItems(int $orderId): ?OrdersItem
+    public static function getOrdersItems(int $orderId): array
     {
         $stmt = self::getPDO()->prepare(query: 'SELECT * FROM orders_items WHERE order_id = :order_id');
         $stmt->execute(['order_id' => $orderId]);
-        $data = $stmt->fetch();
-
-        if (empty($data)) {
-        return null;
-    }
-        return new self($data['id'], $data['order_id'], $data['product_id'], $data['quantity'], $data['price']);
+        $data = $stmt->fetchAll();
+        $arr = [];
+        foreach ($data as $elem) {
+            $arr[] = new self($elem['id'], $elem['order_id'], $elem['product_id'], $elem['quantity'], $elem['price']);
+        }
+        return $arr;
     }
     public function getId(): int
     {
@@ -42,11 +48,11 @@ class OrdersItem extends Model
     {
         return $this->orderId;
     }
-    public function getProductId(): string
+    public function getProductId(): int
     {
         return $this->productId;
     }
-    public function getQuantity(): string
+    public function getQuantity(): int
     {
         return $this->quantity;
     }

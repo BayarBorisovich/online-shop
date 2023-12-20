@@ -5,6 +5,7 @@ use Model\CartProduct;
 use Model\Order;
 use Model\OrdersItem;
 use Model\Product;
+use Model\User;
 use Request\OrderRegistrationRequest;
 
 class OrderController
@@ -41,23 +42,21 @@ class OrderController
 
                 $cartProducts = CartProduct::getAll($cartId); // все продукты в корзине у пользователя
                 $productId = [];
-                $quantity = [];
                 foreach ($cartProducts as $cartProduct) {
                     $productId[] = $cartProduct->getProductId();
-                    $quantity[] = $cartProduct->getQuantity();
                 }
+
                 $products = Product::getAllByIds($productId); // продукты пользователя
                 foreach ($products as $product) {
                     foreach ($cartProducts as $cartProduct) {
                         if ($cartProduct->getProductId() === $product->getId()) {
-                            $sumPrice[] = $product->getPrice()*$cartProduct->getQuantity();
+                            $arrayOfPrices[$product->getId()] = $product->getPrice()*$cartProduct->getQuantity();
                         }
                     }
                 }
-                $price = array_sum($sumPrice); // Общая сумма корзины;
 
-                OrdersItem::addOrdersItems($orderId, $productId, $quantity, $price);
-                header('location: /order');
+                OrdersItem::addOrdersItems($orderId, $cartProducts, $arrayOfPrices);
+                header('location: /order-items');
 
             } else {
                 header('location: /login');
@@ -71,11 +70,27 @@ class OrderController
         session_start();
         if (isset($_SESSION['user_id'])) {
             $userId = $_SESSION['user_id'];
-            $order = Order::getOne($userId);
-            $orderId = $order->getId();
-            $orderItem = OrdersItem::getOrdersItems($orderId);
 
-//            header('location: /order-items');
+            $users = User::addOneById($userId);
+
+            $orders = Order::getOne($userId);
+            $orderId = $orders->getId();
+
+            $orderItems = OrdersItem::getOrdersItems($orderId);
+            $productId = [];
+            foreach ($orderItems as $elem) {
+                $productId[] = $elem->getProductId();
+            }
+
+            $products = Product::getAllByIds($productId); // продукты пользователя
+            foreach ($products as $product) {
+                foreach ($orderItems as $orderItem) {
+                    if ($orderItem->getProductId() === $product->getId()) {
+                        $sumPrice[] = $product->getPrice()*$orderItem->getQuantity();
+                    }
+                }
+            }
+            $sumTotalCart = array_sum($sumPrice); // Общая сумма корзины;
         } else {
             header('location: /login');
         }
