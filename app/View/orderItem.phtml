@@ -4,7 +4,8 @@
         <a href="/order" > <h3 class="cart"> назад к оформлению заказа </h3> </a>
         <?php echo 'имя заказчика ' . $users->getName(); echo "<br>";?>
         <?php echo 'тел. ' . $orders->getTelephone(); echo "<br>";?>
-        <?php echo "г. {$orders->getCity()} ул. {$orders->getStreet()} дом {$orders->getHouse()}"?>
+        <?php echo "г. {$orders->getCity()} ул. {$orders->getStreet()} дом {$orders->getHouse()}";echo "<br>";?>
+        <?php echo 'коментарий к заказу: ' . $orders->getComments() ?>
         <?php foreach ($products as $product): ?>
             <?php foreach ($orderItems as $orderItem): ?>
                <?php if ($orderItem->getProductId() === $product->getId()): ?>

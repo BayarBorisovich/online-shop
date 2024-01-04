@@ -1,6 +1,7 @@
 <div class="container">
     <h2>КОРЗИНА</h2>
     <h2 class="card-deck">
+        <a href="/main" > <h3 class="cart"> назад в каталог </h3> </a>
         <?php foreach ($products as $product): ?>
             <?php foreach ($cartProducts as $cartProduct):?>
                  <?php if ($cartProduct->getProductId() === $product->getId()): ?>
@@ -17,6 +18,7 @@
                                     <div class="quantity-price">
                                         <?php echo $cartProduct->getQuantity() . ' шт.'; ?>
                                     </div>
+                                    <input type="submit" class="fadeIn fourth" value="Удалить товар">
                                     <div class="card-footer">
                                         <?php echo 'цена ' . $product->getPrice()*$cartProduct->getQuantity()." р." ?>
                                     </div>

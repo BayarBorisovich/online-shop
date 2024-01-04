@@ -47,7 +47,7 @@ class CartController
 
             $cart = Cart::getOne($userId);
             $cartId = $cart->getId();
-            $cartProducts = CartProduct::getAll($cartId); // все продукты в корзине у пользователя
+            $cartProducts = CartProduct::getAllByCartId($cartId); // все продукты в корзине у пользователя
 
             $productIds = [];
             foreach ($cartProducts as $cartProduct) {
@@ -65,6 +65,31 @@ class CartController
             }
             $sumTotalCart = array_sum($sumPrice); // Общая сумма корзины;
             require_once '../View/cart.phtml';
+        }
+    }
+    public function deleteAnItem(AddProductRequest $request): void
+    {
+        session_start();
+        if (isset($_SESSION['user_id'])) {
+            $userId = $_SESSION['user_id'];
+
+            if (isset($request->getBody()['product_id'])) {
+                $productId = $request->getBody()['product_id'];
+
+                $cartProducts = CartProduct::getAllByProductId($productId);
+
+                foreach ($cartProducts as $cartProduct) {
+                    $cartProductId = $cartProduct->getId();
+                }
+//                var_dump($cartProductId);die;
+                CartProduct::removingAproduct($cartProductId);
+
+                header('location: /cart');
+            } else {
+                echo 'нет продукта';
+            }
+        } else {
+            header('location: /login');
         }
 
     }

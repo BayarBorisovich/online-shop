@@ -28,8 +28,10 @@ class Order extends Model
     {
         $stmt = self::getPDO()->prepare(query: 'SELECT * FROM orders WHERE user_id = :user_id');
         $stmt->execute(['user_id' => $userId]);
-        $data = $stmt->fetch(PDO::FETCH_ASSOC);
-
+        $datas = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($datas as $elem) {
+           $data = $elem;
+        }
         if (empty($data)) {
             return null;
         }

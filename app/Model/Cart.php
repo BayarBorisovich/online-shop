@@ -32,7 +32,6 @@ class Cart extends Model
         $stmt = self::getPDO()->prepare(query: 'INSERT INTO carts (name, user_id) VALUES (:name, :id)');
         return $stmt->execute(['name' => 'cart1', 'id' => $userId]);
     }
-
     public function getId(): int
     {
         return $this->id;

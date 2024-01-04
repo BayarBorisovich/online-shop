@@ -40,7 +40,7 @@ class OrderController
                 $cart = Cart::getOne($userId);
                 $cartId = $cart->getId();
 
-                $cartProducts = CartProduct::getAll($cartId); // все продукты в корзине у пользователя
+                $cartProducts = CartProduct::getAllByCartId($cartId); // все продукты в корзине у пользователя
                 $productId = [];
                 foreach ($cartProducts as $cartProduct) {
                     $productId[] = $cartProduct->getProductId();

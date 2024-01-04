@@ -53,6 +53,11 @@ class App
                 'class' => CartController::class,
                 'method' => 'getCart'
             ],
+            'POST' => [
+                'class' => CartController::class,
+                'method' => 'deleteAnItem',
+                'request' => AddProductRequest::class,
+            ],
         ],
         '/order' => [
             'GET' => [

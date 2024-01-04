@@ -22,7 +22,7 @@ class CartProduct extends Model
         return $stmt->execute(['cart_id' => $cartId, 'product_id' => $productId, 'quantity' => $quantity]);
     }
 
-    public static function getAll(int $cartId): array
+    public static function getAllByCartId(int $cartId): array
     {
         $stmt = self::getPDO()->prepare(query: 'SELECT * FROM cart_products WHERE cart_id = :cart_id');
         $stmt->execute(['cart_id' => $cartId]);
@@ -34,7 +34,30 @@ class CartProduct extends Model
         }
         return $arr;
     }
+    public static function getAllByProductId(int $productId): array
+    {
+        $stmt = self::getPDO()->prepare(query: 'SELECT * FROM cart_products WHERE product_id = :product_id');
+        $stmt->execute(['product_id' => $productId]);
+        $data = $stmt->fetchAll();
 
+        $arr = [];
+        foreach ($data as $elem) {
+            $arr[] = new self($elem['id'], $elem['cart_id'], $elem['product_id'], $elem['quantity']);
+        }
+        return $arr;
+    }
+    public static function removingAproduct(int $cartProductId): array|null
+    {
+        $stmt = self::getPDO()->prepare(query: 'DELETE FROM cart_products WHERE id = :id');
+        $stmt->execute([$cartProductId]);
+        $data = $stmt->fetchAll();
+        return $data;
+//        $arr = [];
+//        foreach ($data as $elem) {
+//            $arr[] = new self($elem['id'], $elem['cart_id'], $elem['product_id'], $elem['quantity']);
+//        }
+//        return $arr;
+    }
     public function getId(): int
     {
         return $this->id;
