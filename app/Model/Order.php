@@ -5,21 +5,23 @@ use PDO;
 class Order extends Model
 {
     private int $id;
+    private int $userId;
     private string $telephone;
     private string $city;
     private string $street;
     private string $house;
     private string $comments;
-    public function __construct(int $id, string $telephone, string $city, string $street, string $house, string $comments = null)
+    public function __construct(int $id, int $userId, string $telephone, string $city, string $street, string $house, string $comments = null)
     {
         $this->id = $id;
+        $this->userId=$userId;
         $this->telephone = $telephone;
         $this->city = $city;
         $this->street = $street;
         $this->house = $house;
         $this->comments = $comments;
     }
-    public static function creatOrders(string $userId, string $telephone, string $city, string $street, string $house, string $comments,): bool
+    public static function create(int $userId, string $telephone, string $city, string $street, string $house, string $comments,): bool
     {
         $stmt = self::getPDO()->prepare(query: 'INSERT INTO orders (user_id, telephone, city, street, house, comments) VALUES (:user_id, :telephone, :city, :street, :house, :comments)');
         return $stmt->execute(['user_id' => $userId, 'telephone' => $telephone, 'city' => $city, 'street' => $street, 'house' => $house, 'comments' => $comments]);
@@ -35,7 +37,19 @@ class Order extends Model
         if (empty($data)) {
             return null;
         }
-        return new self($data['id'], $data['telephone'], $data['city'], $data['street'], $data['house'], $data['comments'], );
+        return new self($data['id'], $data['user_id'], $data['telephone'], $data['city'], $data['street'], $data['house'], $data['comments'], );
+    }
+    public static function removingAorder(int $cartProductId): array|null
+    {
+        $stmt = self::getPDO()->prepare(query: 'DELETE FROM orders WHERE id = :id');
+        $stmt->execute([$cartProductId]);
+        $data = $stmt->fetchAll();
+        return $data;
+    }
+    public static function delete(int $orderId, int $user_id): bool
+    {
+        $stmt = self::getPDO()->prepare(query: 'DELETE FROM orders WHERE id = :order_id and user_id = :user_id');
+        return $stmt->execute([$orderId, $user_id]);
     }
     public function getCity(): string
     {
@@ -65,5 +79,10 @@ class Order extends Model
     public function getComments(): string
     {
         return $this->comments;
+    }
+
+    public function getUserId(): int
+    {
+        return $this->userId;
     }
 }

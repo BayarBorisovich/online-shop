@@ -1,7 +1,7 @@
 <div class="container">
     <h2>КАТАЛОГ</h2>
     <h2 class="card-deck">
-        <a href="/cart" > <h3 class="cart">  Корзина  </h3> </a>
+        <a href="/login" > <h3 class="cart"> Login </h3> </a>
         <?php foreach ($products as $product): ?>
             <form action="/main" method="post">
                 <div class="card text-center">
@@ -24,6 +24,7 @@
                 </div>
             </form>
         <?php endforeach; ?>
+        <a href="/cart" > <h3 class="cart">  Cart  </h3> </a>
     </div>
     <style>
         body {

@@ -1,7 +1,7 @@
 <div class="container">
     <h2>КОРЗИНА</h2>
     <h2 class="card-deck">
-        <a href="/main" > <h3 class="cart"> назад в каталог </h3> </a>
+        <a href="/main" > <h3 class="cart"> в каталог </h3> </a>
         <?php foreach ($products as $product): ?>
             <?php foreach ($cartProducts as $cartProduct):?>
                  <?php if ($cartProduct->getProductId() === $product->getId()): ?>

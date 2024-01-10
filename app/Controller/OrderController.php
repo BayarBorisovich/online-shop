@@ -33,20 +33,23 @@ class OrderController
                 $house = $requestGetBody['house'];
                 $comments = $requestGetBody['comments'];
 
-                Order::creatOrders($userId, $telephone, $city, $street, $house, $comments);
                 $order = Order::getOne($userId);
+                if (!empty($order)) {
+                    if ($order->getUserId() === $userId) {
+                        $orderId = Order::getOne($userId)->getId();
+                        OrdersItem::delete($orderId);
+                        Order::delete($orderId, $userId);
+                    }
+                }
+                Order::create($userId, $telephone, $city, $street, $house, $comments);
+                $order = Order::getOne($userId);
+
                 $orderId = $order->getId();
 
-                $cart = Cart::getOne($userId);
-                $cartId = $cart->getId();
+                $cartProducts = CartProduct::getAllByUserId($userId); // все продукты в корзине у пользователя
 
-                $cartProducts = CartProduct::getAllByCartId($cartId); // все продукты в корзине у пользователя
-                $productId = [];
-                foreach ($cartProducts as $cartProduct) {
-                    $productId[] = $cartProduct->getProductId();
-                }
 
-                $products = Product::getAllByIds($productId); // продукты пользователя
+                $products = Product::getAllByUserId($userId); // продукты пользователя
                 foreach ($products as $product) {
                     foreach ($cartProducts as $cartProduct) {
                         if ($cartProduct->getProductId() === $product->getId()) {
@@ -55,7 +58,12 @@ class OrderController
                     }
                 }
 
-                OrdersItem::addOrdersItems($orderId, $cartProducts, $arrayOfPrices);
+                OrdersItem::create($orderId, $cartProducts, $arrayOfPrices);
+
+                $cartId = Cart::getOne($userId)->getId();
+
+                CartProduct::delete($cartId);
+
                 header('location: /order-items');
 
             } else {

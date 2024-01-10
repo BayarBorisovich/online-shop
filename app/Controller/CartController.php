@@ -13,28 +13,23 @@ class CartController
         $errors = $request->validate();
 
         if (empty($errors)) {
+            $productId = $request->getBody()['product_id'];
+            $quantity = $request->getBody()['quantity'];
 
-            if (isset($request->getBody()['product_id']) && isset($request->getBody()['quantity'])) {
-                $productId = $request->getBody()['product_id'];
-                $quantity = $request->getBody()['quantity'];
+            session_start();
+            if (isset($_SESSION['user_id'])) {
+                $userId = $_SESSION['user_id'];
 
-                session_start();
-                if (isset($_SESSION['user_id'])) {
-                    $userId = $_SESSION['user_id'];
+                $cart = Cart::getOne($userId);
+                if (!isset($cart)) {
+                    Cart::create($userId);
 
                     $cart = Cart::getOne($userId);
-                    if (!isset($cart)) {
-                        Cart::create($userId);
-
-                        $cart = Cart::getOne($userId);
-                    }
-                    $cartId = $cart->getId();
-
-                    CartProduct::create($cartId, $productId, $quantity);
-                    header('location: /main');
                 }
-            } else {
-                header('location: /login');
+                $cartId = $cart->getId();
+
+                CartProduct::create($cartId, $productId, $quantity);
+                header('location: /main');
             }
             require_once '../Controller/IndexController.php';
         }
@@ -45,26 +40,24 @@ class CartController
         if (isset($_SESSION['user_id'])) {
             $userId = $_SESSION['user_id'];
 
-            $cart = Cart::getOne($userId);
-            $cartId = $cart->getId();
-            $cartProducts = CartProduct::getAllByCartId($cartId); // все продукты в корзине у пользователя
+            $cartProducts = CartProduct::getAllByUserId($userId); // все продукты в корзине у пользователя
+            if (!empty($cartProducts)) {
 
-            $productIds = [];
-            foreach ($cartProducts as $cartProduct) {
-                $productIds[] = $cartProduct->getProductId();
-            }
-            $products = Product::getAllByIds($productIds); // продукты пользователя
+                $products = Product::getAllByUserId($userId); // продукты пользователя
 
-            foreach ($products as $product) {
-                foreach ($cartProducts as $cartProduct) {
-                    if ($cartProduct->getProductId() === $product->getId()) {
-                        $sumPrice[] = $product->getPrice()*$cartProduct->getQuantity();
+                foreach ($products as $product) {
+                    foreach ($cartProducts as $cartProduct) {
+                        if ($cartProduct->getProductId() === $product->getId()) {
+                            $sumPrice[] = $product->getPrice()*$cartProduct->getQuantity();
 
+                        }
                     }
                 }
+                $sumTotalCart = array_sum($sumPrice); // Общая сумма корзины;
+                require_once '../View/cart.phtml';
+            } else {
+                header('location: /main');
             }
-            $sumTotalCart = array_sum($sumPrice); // Общая сумма корзины;
-            require_once '../View/cart.phtml';
         }
     }
     public function deleteAnItem(AddProductRequest $request): void
@@ -76,13 +69,9 @@ class CartController
             if (isset($request->getBody()['product_id'])) {
                 $productId = $request->getBody()['product_id'];
 
-                $cartProducts = CartProduct::getAllByProductId($productId);
+                $cartId = Cart::getOne($userId)->getId();
 
-                foreach ($cartProducts as $cartProduct) {
-                    $cartProductId = $cartProduct->getId();
-                }
-//                var_dump($cartProductId);die;
-                CartProduct::removingAproduct($cartProductId);
+                CartProduct::removingAproduct($productId, $cartId);
 
                 header('location: /cart');
             } else {
