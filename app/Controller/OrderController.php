@@ -50,19 +50,20 @@ class OrderController
 
 
                 $products = Product::getAllByUserId($userId); // продукты пользователя
-                foreach ($products as $product) {
-                    foreach ($cartProducts as $cartProduct) {
-                        if ($cartProduct->getProductId() === $product->getId()) {
-                            $arrayOfPrices[$product->getId()] = $product->getPrice()*$cartProduct->getQuantity();
-                        }
+
+                foreach ($cartProducts as $cartProduct) {
+                    if (isset($products[$cartProduct->getProductId()])) {
+                        $product = $products[$cartProduct->getProductId()];
+                        $arrayOfPrices[$product->getId()] = $product->getPrice()*$cartProduct->getQuantity();
                     }
                 }
+
 
                 OrdersItem::create($orderId, $cartProducts, $arrayOfPrices);
 
                 $cartId = Cart::getOne($userId)->getId();
 
-                CartProduct::delete($cartId);
+                CartProduct::clear($cartId);
 
                 header('location: /order-items');
 
@@ -91,6 +92,7 @@ class OrderController
             }
 
             $products = Product::getAllByIds($productId); // продукты пользователя
+//            var_dump($products);die;
             foreach ($products as $product) {
                 foreach ($orderItems as $orderItem) {
                     if ($orderItem->getProductId() === $product->getId()) {

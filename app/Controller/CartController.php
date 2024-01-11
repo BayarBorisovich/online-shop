@@ -45,12 +45,10 @@ class CartController
 
                 $products = Product::getAllByUserId($userId); // продукты пользователя
 
-                foreach ($products as $product) {
-                    foreach ($cartProducts as $cartProduct) {
-                        if ($cartProduct->getProductId() === $product->getId()) {
-                            $sumPrice[] = $product->getPrice()*$cartProduct->getQuantity();
-
-                        }
+                foreach ($cartProducts as $cartProduct) {
+                    if (isset($products[$cartProduct->getProductId()])) {
+                        $product = $products[$cartProduct->getProductId()];
+                        $sumPrice[] = $product->getPrice()*$cartProduct->getQuantity();
                     }
                 }
                 $sumTotalCart = array_sum($sumPrice); // Общая сумма корзины;
