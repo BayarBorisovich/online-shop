@@ -96,12 +96,19 @@ class App
                 } else {
                     $request = new Request($requestMethod, $_POST);
                 }
-                $obj->$method($request);
+                try{
+                    $obj->$method($request);
+                } catch (Throwable $throwable) {
+                    $log = date('Y-m-d H:i:s') . ' ' . $throwable->getMessage() . ', ' . $throwable->getLine() . '. ';
+                    file_put_contents( '../Storage/logs/error.txt', $log, FILE_APPEND);
+                    require_once '../View/500.html';
+                }
+
             } else {
                 echo "Метод $requestMethod для $requestUri не поддерживается";
             }
         } else {
-            require_once './View/404.html';
+            require_once '../View/404.html';
         }
     }
 }

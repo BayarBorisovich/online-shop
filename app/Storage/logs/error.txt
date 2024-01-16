@@ -1,0 +1,1 @@
+2024-01-16 13:19:29 array_sum(): Argument #1 ($array) must be of type array, null given, 2024-01-16 13:20:21 Call to undefined method Request\OrderRegistrationRequest::getody(), 2024-01-16 13:21:38 Call to undefined method Request\OrderRegistrationRequest::getody(), 27. 

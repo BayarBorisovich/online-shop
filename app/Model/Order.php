@@ -25,6 +25,7 @@ class Order extends Model
     {
         $stmt = self::getPDO()->prepare(query: 'INSERT INTO orders (user_id, telephone, city, street, house, comments) VALUES (:user_id, :telephone, :city, :street, :house, :comments)');
         return $stmt->execute(['user_id' => $userId, 'telephone' => $telephone, 'city' => $city, 'street' => $street, 'house' => $house, 'comments' => $comments]);
+
     }
     public static function getOne(int $userId): Order|null
     {

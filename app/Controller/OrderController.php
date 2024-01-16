@@ -1,12 +1,11 @@
 <?php
 namespace Controller;
-use Model\Cart;
-use Model\CartProduct;
 use Model\Order;
 use Model\OrdersItem;
 use Model\Product;
 use Model\User;
 use Request\OrderRegistrationRequest;
+use Service\OrderService;
 
 class OrderController
 {
@@ -27,43 +26,8 @@ class OrderController
 
                 $requestGetBody = $request->getBody();
 
-                $telephone = $requestGetBody['telephone'];
-                $city = $requestGetBody['city'];
-                $street = $requestGetBody['street'];
-                $house = $requestGetBody['house'];
-                $comments = $requestGetBody['comments'];
-
-                $order = Order::getOne($userId);
-                if (!empty($order)) {
-                    if ($order->getUserId() === $userId) {
-                        $orderId = Order::getOne($userId)->getId();
-                        OrdersItem::delete($orderId);
-                        Order::delete($orderId, $userId);
-                    }
-                }
-                Order::create($userId, $telephone, $city, $street, $house, $comments);
-                $order = Order::getOne($userId);
-
-                $orderId = $order->getId();
-
-                $cartProducts = CartProduct::getAllByUserId($userId); // все продукты в корзине у пользователя
-
-
-                $products = Product::getAllByUserId($userId); // продукты пользователя
-
-                foreach ($cartProducts as $cartProduct) {
-                    if (isset($products[$cartProduct->getProductId()])) {
-                        $product = $products[$cartProduct->getProductId()];
-                        $arrayOfPrices[$product->getId()] = $product->getPrice()*$cartProduct->getQuantity();
-                    }
-                }
-
-
-                OrdersItem::create($orderId, $cartProducts, $arrayOfPrices);
-
-                $cartId = Cart::getOne($userId)->getId();
-
-                CartProduct::clear($cartId);
+                $orderService = new OrderService();
+                $orderService->create($userId, $requestGetBody);
 
                 header('location: /order-items');
 
