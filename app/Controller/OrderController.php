@@ -56,7 +56,6 @@ class OrderController
             }
 
             $products = Product::getAllByIds($productId); // продукты пользователя
-//            var_dump($products);die;
             foreach ($products as $product) {
                 foreach ($orderItems as $orderItem) {
                     if ($orderItem->getProductId() === $product->getId()) {

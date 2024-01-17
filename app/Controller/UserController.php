@@ -55,7 +55,6 @@ class UserController
                     session_start();
                     $_SESSION['user_id'] = $requestData->getId();
                     header('location: /main');
-//                    require_once '../View/login.phtml';
                 } else {
                     $errors['login'] = 'логин или пароль введены не верно';
                 }

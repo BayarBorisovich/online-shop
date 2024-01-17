@@ -1,82 +1,12 @@
 <?php
 
-use Controller\CartController;
-use Controller\IndexController;
-use Controller\OrderController;
-use Controller\OrderItemsController;
-use Controller\UserController;
-use Request\AddProductRequest;
-use Request\LoginRequest;
-use Request\OrderRegistrationRequest;
-use Request\RegistrationRequest;
 use Request\Request;
+use Service\LoggerService;
 
 class App
 {
-    private array $routes = [ // свойство
-        '/registration' => [
-            'GET' => [
-                'class' => UserController::class,
-                'method' => 'getRegistration',
-            ],
-            'POST' => [
-                'class' => UserController::class,
-                'method' => 'postRegistration',
-                'request' => RegistrationRequest::class,
-            ],
+    private array $routes = []; // свойство
 
-        ],
-        '/login' => [
-            'GET' => [
-                'class' => UserController::class,
-                'method' => 'getLogin',
-            ],
-            'POST' => [
-                'class' => UserController::class,
-                'method' => 'postLogin',
-                'request' => LoginRequest::class,
-            ],
-        ],
-        '/main' => [
-            'GET' => [
-                'class' => IndexController::class,
-                'method' => 'getMain'
-            ],
-            'POST' => [
-                'class' => CartController::class,
-                'method' => 'postAddProduct',
-                'request' => AddProductRequest::class,
-            ],
-        ],
-        '/cart' => [
-            'GET' => [
-                'class' => CartController::class,
-                'method' => 'getCart'
-            ],
-            'POST' => [
-                'class' => CartController::class,
-                'method' => 'deleteAnItem',
-                'request' => AddProductRequest::class,
-            ],
-        ],
-        '/order' => [
-            'GET' => [
-                'class' => OrderController::class,
-                'method' => 'getOrderForm',
-            ],
-            'POST' => [
-                'class' => OrderController::class,
-                'method' => 'orderRegistration',
-                'request' => OrderRegistrationRequest::class
-            ],
-        ],
-        '/order-items' => [
-            'GET' => [
-                'class' => OrderController::class,
-                'method' => 'getOrderItems',
-            ],
-        ],
-    ];
     public function run(): void // запустить
     {
         $requestUri = $_SERVER['REQUEST_URI'];
@@ -99,8 +29,8 @@ class App
                 try{
                     $obj->$method($request);
                 } catch (Throwable $throwable) {
-                    $log = date('Y-m-d H:i:s') . ' ' . $throwable->getMessage() . ', ' . $throwable->getLine() . '. ';
-                    file_put_contents( '../Storage/logs/error.txt', $log, FILE_APPEND);
+                    $loggerService = new LoggerService();
+                    $loggerService->error($throwable);
                     require_once '../View/500.html';
                 }
 
@@ -110,5 +40,37 @@ class App
         } else {
             require_once '../View/404.html';
         }
+    }
+    public function get(string $name, string $className, string $method, string $request = null): void
+    {
+        $this->routes[$name]['GET'] = [
+            'class' => $className,
+            'method' => $method,
+            'request' => $request,
+        ];
+    }
+    public function post(string $name, string $className, string $method, string $request = null): void
+    {
+        $this->routes[$name]['POST'] = [
+            'class' => $className,
+            'method' => $method,
+            'request' => $request,
+        ];
+    }
+    public function put(string $name, string $className, string $method, string $request = null): void
+    {
+        $this->routes[$name]['PUT'] = [
+            'class' => $className,
+            'method' => $method,
+            'request' => $request,
+        ];
+    }
+    public function heat(string $name, string $className, string $method, string $request = null): void
+    {
+        $this->routes[$name]['HEAT'] = [
+            'class' => $className,
+            'method' => $method,
+            'request' => $request,
+        ];
     }
 }
