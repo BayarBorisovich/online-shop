@@ -1,7 +1,66 @@
-
-2024-01-16 16:03:51, array_sum(): Argument #1 ($array) must be of type array, null given, line: 66, file: /var/www/html/app/Controller/OrderController.php. 
-2024-01-16 16:04:21, array_sum(): Argument #1 ($array) must be of type array, null given, line: 66, file: /var/www/html/app/Controller/OrderController.php. 
-2024-01-16 16:05:05, array_sum(): Argument #1 ($array) must be of type array, null given, line: 66, file: /var/www/html/app/Controller/OrderController.php. 
-2024-01-16 16:05:55, Call to a member function getBody() on null, line: 27, file: /var/www/html/app/Controller/OrderController.php. 
 2024-01-16 16:07:34, Call to a member function getBody() on null, file: /var/www/html/app/Controller/OrderController.php, line: 27
 2024-01-17 01:26:50, Call to a member function getName() on null, file: /var/www/html/app/View/orderItem.phtml, line: 5
+2024-01-18 15:04:08, Call to a member function getName() on null, file: /var/www/html/app/View/orderItem.phtml, line: 5
+2024-01-19 02:20:44, Model\CartProduct::create(): Argument #3 ($quantity) must be of type int, string given, called in /var/www/html/app/Controller/CartController.php on line 40, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-19 02:33:21, Model\CartProduct::create(): Argument #3 ($quantity) must be of type int, string given, called in /var/www/html/app/Controller/CartController.php on line 37, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-19 05:56:48, Call to a member function getName() on null, file: /var/www/html/app/View/orderItem.phtml, line: 5
+2024-01-19 05:57:43, array_sum(): Argument #1 ($array) must be of type array, null given, file: /var/www/html/app/Controller/CartController.php, line: 62
+2024-01-19 05:59:39, There is no active transaction, file: /var/www/html/app/Service/OrderService.php, line: 59
+2024-01-19 06:00:33, There is no active transaction, file: /var/www/html/app/Service/OrderService.php, line: 59
+2024-01-19 06:00:46, There is no active transaction, file: /var/www/html/app/Service/OrderService.php, line: 59
+2024-01-19 06:00:50, There is no active transaction, file: /var/www/html/app/Service/OrderService.php, line: 59
+2024-01-19 06:01:14, There is no active transaction, file: /var/www/html/app/Service/OrderService.php, line: 59
+2024-01-19 06:06:10, There is no active transaction, file: /var/www/html/app/Service/OrderService.php, line: 59
+2024-01-19 06:06:56, array_sum(): Argument #1 ($array) must be of type array, null given, file: /var/www/html/app/Controller/CartController.php, line: 62
+2024-01-19 06:07:30, Controller\OrderController::orderRegistration(): Return value must be of type mixed, none returned, file: /var/www/html/app/Controller/OrderController.php, line: 45
+2024-01-19 06:08:04, Controller\OrderController::orderRegistration(): Return value must be of type mixed, none returned, file: /var/www/html/app/Controller/OrderController.php, line: 45
+2024-01-19 06:08:12, There is no active transaction, file: /var/www/html/app/Service/OrderService.php, line: 59
+2024-01-19 06:11:32, There is no active transaction, file: /var/www/html/app/Service/OrderService.php, line: 59
+2024-01-19 06:13:30, There is no active transaction, file: /var/www/html/app/Service/OrderService.php, line: 59
+2024-01-19 06:13:40, array_sum(): Argument #1 ($array) must be of type array, null given, file: /var/www/html/app/Controller/CartController.php, line: 62
+2024-01-19 06:21:40, Controller\UserController::postRegistration(): Return value must be of type mixed, none returned, file: /var/www/html/app/Controller/UserController.php, line: 33
+2024-01-19 06:26:19, Call to a member function getPassword() on null, file: /var/www/html/app/Controller/UserController.php, line: 59
+2024-01-19 06:26:41, Call to a member function getPassword() on null, file: /var/www/html/app/Controller/UserController.php, line: 59
+2024-01-19 06:28:05, Controller\UserController::postLogin(): Return value must be of type mixed, none returned, file: /var/www/html/app/Controller/UserController.php, line: 65
+2024-01-19 06:32:56, Controller\UserController::postLogin(): Return value must be of type mixed, none returned, file: /var/www/html/app/Controller/UserController.php, line: 66
+2024-01-19 06:35:32, Controller\UserController::postLogin(): Return value must be of type mixed, none returned, file: /var/www/html/app/Controller/UserController.php, line: 68
+2024-01-19 06:41:32, Call to a member function getPassword() on null, file: /var/www/html/app/Controller/UserController.php, line: 60
+2024-01-19 06:42:00, Call to a member function getPassword() on null, file: /var/www/html/app/Controller/UserController.php, line: 60
+2024-01-19 06:43:19, Controller\UserController::postLogin(): Return value must be of type mixed, none returned, file: /var/www/html/app/Controller/UserController.php, line: 69
+2024-01-19 06:44:00, Controller\UserController::postLogin(): Return value must be of type mixed, none returned, file: /var/www/html/app/Controller/UserController.php, line: 69
+2024-01-19 06:44:16, Controller\UserController::postLogin(): Return value must be of type mixed, none returned, file: /var/www/html/app/Controller/UserController.php, line: 69
+2024-01-19 06:44:35, Controller\UserController::postLogin(): Return value must be of type mixed, none returned, file: /var/www/html/app/Controller/UserController.php, line: 69
+2024-01-19 06:49:01, array_sum(): Argument #1 ($array) must be of type array, null given, file: /var/www/html/app/Controller/CartController.php, line: 62
+2024-01-19 06:58:47, array_sum(): Argument #1 ($array) must be of type array, null given, file: /var/www/html/app/Controller/CartController.php, line: 65
+2024-01-19 07:04:36, array_sum(): Argument #1 ($array) must be of type array, null given, file: /var/www/html/app/Controller/CartController.php, line: 65
+2024-01-19 07:07:45, array_sum(): Argument #1 ($array) must be of type array, null given, file: /var/www/html/app/Controller/CartController.php, line: 66
+2024-01-19 07:08:55, array_sum(): Argument #1 ($array) must be of type array, null given, file: /var/www/html/app/Controller/CartController.php, line: 66
+2024-01-19 07:21:25, array_sum(): Argument #1 ($array) must be of type array, null given, file: /var/www/html/app/Controller/CartController.php, line: 66
+2024-01-19 07:23:31, Model\CartProduct::create(): Argument #3 ($quantity) must be of type int, string given, called in /var/www/html/app/Controller/CartController.php on line 41, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-19 07:23:38, Controller\CartController::postAddProduct(): Return value must be of type mixed, none returned, file: /var/www/html/app/Controller/CartController.php, line: 44
+2024-01-19 07:23:43, Controller\CartController::postAddProduct(): Return value must be of type mixed, none returned, file: /var/www/html/app/Controller/CartController.php, line: 44
+2024-01-19 08:33:20, Model\CartProduct::create(): Argument #3 ($quantity) must be of type int, string given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-19 08:33:25, Controller\CartController::postAddProduct(): Return value must be of type mixed, none returned, file: /var/www/html/app/Controller/CartController.php, line: 45
+2024-01-19 08:37:48, There is no active transaction, file: /var/www/html/app/Service/OrderService.php, line: 59
+2024-01-19 08:38:05, There is no active transaction, file: /var/www/html/app/Service/OrderService.php, line: 59
+2024-01-22 06:38:27, Call to a member function getId() on null, file: /var/www/html/app/Controller/IndexController.php, line: 18
+2024-01-22 06:38:46, Cannot use object of type Model\User as array, file: /var/www/html/app/Service/Authentication/CookieAuthenticationService.php, line: 20
+2024-01-22 06:39:57, Cannot use object of type Model\User as array, file: /var/www/html/app/Service/Authentication/CookieAuthenticationService.php, line: 20
+2024-01-22 06:41:25, Cannot use object of type Model\User as array, file: /var/www/html/app/Service/Authentication/CookieAuthenticationService.php, line: 20
+2024-01-22 06:41:39, Cannot use object of type Model\User as array, file: /var/www/html/app/Service/Authentication/CookieAuthenticationService.php, line: 20
+2024-01-22 06:41:46, Cannot use object of type Model\User as array, file: /var/www/html/app/Service/Authentication/CookieAuthenticationService.php, line: 20
+2024-01-22 06:42:00, Cannot use object of type Model\User as array, file: /var/www/html/app/Service/Authentication/CookieAuthenticationService.php, line: 20
+2024-01-22 06:43:01, Cannot use object of type Model\User as array, file: /var/www/html/app/Service/Authentication/CookieAuthenticationService.php, line: 20
+2024-01-22 06:43:12, Cannot use object of type Model\User as array, file: /var/www/html/app/Service/Authentication/CookieAuthenticationService.php, line: 20
+2024-01-22 06:43:38, Cannot use object of type Model\User as array, file: /var/www/html/app/Service/Authentication/CookieAuthenticationService.php, line: 20
+2024-01-22 06:44:27, Cannot use object of type Model\User as array, file: /var/www/html/app/Service/Authentication/CookieAuthenticationService.php, line: 20
+2024-01-22 06:44:47, Cannot use object of type Model\User as array, file: /var/www/html/app/Service/Authentication/CookieAuthenticationService.php, line: 20
+2024-01-22 07:03:58, Cannot use object of type Model\User as array, file: /var/www/html/app/Service/Authentication/CookieAuthenticationService.php, line: 20
+2024-01-22 07:05:05, Cannot use object of type Model\User as array, file: /var/www/html/app/Service/Authentication/CookieAuthenticationService.php, line: 20
+2024-01-22 07:05:34, Cannot use object of type Model\User as array, file: /var/www/html/app/Service/Authentication/CookieAuthenticationService.php, line: 20
+2024-01-22 07:06:52, Cannot use object of type Model\User as array, file: /var/www/html/app/Service/Authentication/CookieAuthenticationService.php, line: 20
+2024-01-22 07:16:44, Cannot use object of type Model\User as array, file: /var/www/html/app/Service/Authentication/CookieAuthenticationService.php, line: 20
+2024-01-22 07:17:32, Cannot use object of type Model\User as array, file: /var/www/html/app/Service/Authentication/CookieAuthenticationService.php, line: 20
+2024-01-22 07:20:44, Cannot use object of type Model\User as array, file: /var/www/html/app/Service/Authentication/CookieAuthenticationService.php, line: 20
+2024-01-22 07:29:44, Cannot use object of type Model\User as array, file: /var/www/html/app/Service/Authentication/CookieAuthenticationService.php, line: 20
+2024-01-22 07:31:52, Cannot use object of type Model\User as array, file: /var/www/html/app/Service/Authentication/CookieAuthenticationService.php, line: 20

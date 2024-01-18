@@ -5,7 +5,14 @@ use Service\LoggerService;
 
 class App
 {
-    private array $routes = []; // свойство
+    private Container $container;
+    private LoggerService $loggerService;
+    private array $routes = [];
+    public function setContainer(Container $container): void
+    {
+        $this->container = $container;
+        $this->loggerService = $container->get(LoggerService::class);
+    }
 
     public function run(): void // запустить
     {
@@ -18,7 +25,8 @@ class App
                 $handler =$routeMethods[$requestMethod];
                 $class = $handler['class'];
                 $method = $handler['method'];
-                $obj = new $class();
+
+                $obj = $this->container->get($class);
 
                 if (isset($handler['request'])) {
                     $requestClass = $handler['request'];
@@ -29,8 +37,8 @@ class App
                 try{
                     $obj->$method($request);
                 } catch (Throwable $throwable) {
-                    $loggerService = new LoggerService();
-                    $loggerService->error($throwable);
+
+                    $this->loggerService->error($throwable);
                     require_once '../View/500.html';
                 }
 
@@ -73,4 +81,5 @@ class App
             'request' => $request,
         ];
     }
+
 }

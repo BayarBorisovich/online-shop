@@ -4,80 +4,84 @@ use Model\Cart;
 use Model\CartProduct;
 use Model\Product;
 use Request\AddProductRequest;
+use Service\Authentication\AuthenticationInterface;
+use Service\Authentication\SessionAuthenticationService;
 
 class CartController
 {
+    private AuthenticationInterface $authenticationService;
+    public function __construct(AuthenticationInterface $authenticationService) // инъекция зависимости
+    {
+        $this->authenticationService = $authenticationService;
+    }
     public function postAddProduct(AddProductRequest $request): void
     {
-
-        $errors = $request->validate();
-
-        if (empty($errors)) {
-            $productId = $request->getBody()['product_id'];
-            $quantity = $request->getBody()['quantity'];
-
-            session_start();
-            if (isset($_SESSION['user_id'])) {
-                $userId = $_SESSION['user_id'];
-
-                $cart = Cart::getOne($userId);
-                if (!isset($cart)) {
-                    Cart::create($userId);
-
-                    $cart = Cart::getOne($userId);
-                }
-                $cartId = $cart->getId();
-
-                CartProduct::create($cartId, $productId, $quantity);
-                header('location: /main');
-            }
-            require_once '../Controller/IndexController.php';
-        }
-    }
-    public function getCart(): void
-    {
-        session_start();
-        if (isset($_SESSION['user_id'])) {
-            $userId = $_SESSION['user_id'];
-
-            $cartProducts = CartProduct::getAllByUserId($userId); // все продукты в корзине у пользователя
-            if (!empty($cartProducts)) {
-
-                $products = Product::getAllByUserId($userId); // продукты пользователя
-
-                foreach ($cartProducts as $cartProduct) {
-                    if (isset($products[$cartProduct->getProductId()])) {
-                        $product = $products[$cartProduct->getProductId()];
-                        $sumPrice[] = $product->getPrice()*$cartProduct->getQuantity();
-                    }
-                }
-                $sumTotalCart = array_sum($sumPrice); // Общая сумма корзины;
-                require_once '../View/cart.phtml';
-            } else {
-                header('location: /main');
-            }
-        }
-    }
-    public function deleteAnItem(AddProductRequest $request): void
-    {
-        session_start();
-        if (isset($_SESSION['user_id'])) {
-            $userId = $_SESSION['user_id'];
-
-            if (isset($request->getBody()['product_id'])) {
-                $productId = $request->getBody()['product_id'];
-
-                $cartId = Cart::getOne($userId)->getId();
-
-                CartProduct::removingAproduct($productId, $cartId);
-
-                header('location: /cart');
-            } else {
-                echo 'нет продукта';
-            }
-        } else {
+        $user = $this->authenticationService->getCurrentUser();
+        if (empty($user)) {
             header('location: /login');
         }
 
+        $errors = $request->validate();
+
+        if (!empty($errors)) {
+            header('location: /main');
+        }
+
+        $productId = $request->getBody()['product_id'];
+        $quantity = $request->getBody()['quantity'];
+
+
+        $cart = Cart::getOne($user->getId());
+        if (!isset($cart)) {
+            Cart::create($user->getId());
+
+            $cart = Cart::getOne($user->getId());
+        }
+        $cartId = $cart->getId();
+
+        CartProduct::create($cartId, $productId, $quantity);
+        header('location: /main');
+
+    }
+    public function getCart(): void
+    {
+        $user = $this->authenticationService->getCurrentUser();
+        if (empty($user)) {
+            header('location: /login');
+        }
+
+        $cartProducts = CartProduct::getAllByUserId($user->getId()); // все продукты в корзине у пользователя
+        if (empty($cartProducts)) {
+            header('location: /main');
+        }
+
+        $products = Product::getAllByUserId($user->getId()); // продукты пользователя
+
+        foreach ($cartProducts as $cartProduct) {
+            if (isset($products[$cartProduct->getProductId()])) {
+                $product = $products[$cartProduct->getProductId()];
+                $sumPrice[] = $product->getPrice()*$cartProduct->getQuantity();
+            }
+        }
+        $sumTotalCart = array_sum($sumPrice); // Общая сумма корзины;
+        require_once '../View/cart.phtml';
+    }
+    public function deleteAnItem(AddProductRequest $request): void
+    {
+        $user = $this->authenticationService->getCurrentUser();
+        if (empty($user)) {
+            header('location: /login');
+        }
+
+        if (!isset($request->getBody()['product_id'])) {
+            header('location: /main');
+        }
+        $productId = $request->getBody()['product_id'];
+
+        $cartId = Cart::getOne($user->getId())->getId();
+
+        CartProduct::removingAproduct($productId, $cartId);
+
+        header('location: /cart');
     }
 }

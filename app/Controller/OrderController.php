@@ -5,10 +5,20 @@ use Model\OrdersItem;
 use Model\Product;
 use Model\User;
 use Request\OrderRegistrationRequest;
+use Service\Authentication\AuthenticationInterface;
+use Service\Authentication\SessionAuthenticationService;
 use Service\OrderService;
 
 class OrderController
 {
+    private OrderService $orderService;
+    private AuthenticationInterface $authenticationService;
+
+    public function __construct(OrderService $orderService, AuthenticationInterface $authenticationService)
+    {
+        $this->orderService = $orderService;
+        $this->authenticationService = $authenticationService;
+    }
     public function getOrderForm(): void
     {
         require_once '../View/order.phtml';
@@ -16,57 +26,51 @@ class OrderController
 
     public function orderRegistration(OrderRegistrationRequest $request): void
     {
+        $user = $this->authenticationService->getCurrentUser();
+
+        if (empty($user)) {
+            header('location: /login');
+        }
         $errors = $request->validate();
 
         if (empty($errors)) {
+            $requestGetBody = $request->getBody();
 
-            session_start();
-            if (isset($_SESSION['user_id'])) {
-                $userId = $_SESSION['user_id'];
+            $this->orderService->create($user->getId(), $requestGetBody);
 
-                $requestGetBody = $request->getBody();
-
-                $orderService = new OrderService();
-                $orderService->create($userId, $requestGetBody);
-
-                header('location: /order-items');
-
-            } else {
-                header('location: /login');
-            }
-        } else {
-            require_once '../View/order.phtml';
+            header('location: /order-items');
         }
+        require_once '../View/order.phtml';
+
     }
     public function getOrderItems(): void
     {
-        session_start();
-        if (isset($_SESSION['user_id'])) {
-            $userId = $_SESSION['user_id'];
+        $user = $this->authenticationService->getCurrentUser();
 
-            $users = User::addOneById($userId);
-
-            $orders = Order::getOne($userId);
-            $orderId = $orders->getId();
-
-            $orderItems = OrdersItem::getOrdersItems($orderId);
-            $productId = [];
-            foreach ($orderItems as $elem) {
-                $productId[] = $elem->getProductId();
-            }
-
-            $products = Product::getAllByIds($productId); // продукты пользователя
-            foreach ($products as $product) {
-                foreach ($orderItems as $orderItem) {
-                    if ($orderItem->getProductId() === $product->getId()) {
-                        $sumPrice[] = $product->getPrice()*$orderItem->getQuantity();
-                    }
-                }
-            }
-            $sumTotalCart = array_sum($sumPrice); // Общая сумма корзины;
-        } else {
+        if (empty($user)) {
             header('location: /login');
         }
+        $users = User::addOneById($user->getId());
+
+        $orders = Order::getOne($user->getId());
+        $orderId = $orders->getId();
+
+        $orderItems = OrdersItem::getOrdersItems($orderId);
+        $productId = [];
+        foreach ($orderItems as $elem) {
+            $productId[] = $elem->getProductId();
+        }
+
+        $products = Product::getAllByIds($productId); // продукты пользователя
+        foreach ($products as $product) {
+            foreach ($orderItems as $orderItem) {
+                if ($orderItem->getProductId() === $product->getId()) {
+                    $sumPrice[] = $product->getPrice()*$orderItem->getQuantity();
+                }
+            }
+        }
+        $sumTotalCart = array_sum($sumPrice); // Общая сумма корзины;
+
         require_once '../View/orderItem.phtml';
     }
 }

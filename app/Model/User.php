@@ -20,7 +20,17 @@ class User extends Model
         $stmt = self::getPDO()->prepare(query: 'INSERT INTO users ( name, email, password) VALUES (:name, :email, :password)');
         return $stmt->execute(['name' => $name, 'email' => $email, 'password' => $password]);
     }
+    public static function getOneById(string $userId): User|null
+    {
+        $stmt = self::getPDO()->prepare(query: 'SELECT * FROM users WHERE id = :id');
+        $stmt->execute(['id' => $userId]);
+        $data = $stmt->fetch();
 
+        if (empty($data)) {
+            return null;
+        }
+        return new self($data['id'], $data['name'], $data['email'], $data['password']);
+    }
     public static function getOneByName(string $name): User|null
     {
         $stmt = self::getPDO()->prepare(query: 'SELECT * FROM users WHERE name = :name');
@@ -33,7 +43,7 @@ class User extends Model
         return new self($data['id'], $data['name'], $data['email'], $data['password']);
     }
 
-    public static function addOneByEmail($login): User|null
+    public static function getOneByEmail($login): User|null
     {
         $stmt = self::getPDO()->prepare("SELECT * FROM users WHERE email=:email");
         $stmt->execute(['email' => $login]);

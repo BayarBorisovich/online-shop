@@ -8,11 +8,45 @@ use Request\AddProductRequest;
 use Request\LoginRequest;
 use Request\OrderRegistrationRequest;
 use Request\RegistrationRequest;
+use Service\Authentication\AuthenticationInterface;
 
 require_once "../Autoloader.php";
 Autoloader::registrate(dirname(__DIR__)); //значение текущей родительской директории
 
+$container = new Container();
+
+$container->set(UserController::class, function (Container $container) {
+    $authenticationService = $container->get(AuthenticationInterface::class);
+
+    return new UserController($authenticationService);
+});
+
+$container->set(CartController::class, function (Container $container) {
+    $authenticationService = $container->get(AuthenticationInterface::class);
+
+    return new CartController($authenticationService);
+});
+
+$container->set(IndexController::class, function (Container $container) {
+    $authenticationService = $container->get(AuthenticationInterface::class);
+
+    return new IndexController($authenticationService);
+});
+
+$container->set(OrderController::class, function (Container $container) {
+    $orderService = new \Service\OrderService();
+    $authenticationService = $container->get(AuthenticationInterface::class);
+
+    return new OrderController($orderService, $authenticationService);
+});
+
+$container->set(AuthenticationInterface::class, function () {
+    return new \Service\Authentication\CookieAuthenticationService();
+});
+
 $app = new App();// очему не делаем require_once
+
+$app->setContainer($container);
 
 $app->get('/registration', UserController::class, 'getRegistration');
 $app->post('/registration', UserController::class, 'postRegistration', RegistrationRequest::class);
