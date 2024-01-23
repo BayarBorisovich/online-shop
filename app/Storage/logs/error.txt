@@ -64,3 +64,21 @@
 2024-01-22 07:20:44, Cannot use object of type Model\User as array, file: /var/www/html/app/Service/Authentication/CookieAuthenticationService.php, line: 20
 2024-01-22 07:29:44, Cannot use object of type Model\User as array, file: /var/www/html/app/Service/Authentication/CookieAuthenticationService.php, line: 20
 2024-01-22 07:31:52, Cannot use object of type Model\User as array, file: /var/www/html/app/Service/Authentication/CookieAuthenticationService.php, line: 20
+2024-01-22 12:20:32, Model\CartProduct::create(): Argument #3 ($quantity) must be of type int, string given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-22 12:51:49, Model\CartProduct::create(): Argument #3 ($quantity) must be of type int, string given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-22 12:51:56, Model\CartProduct::create(): Argument #3 ($quantity) must be of type int, string given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-22 12:52:35, Model\CartProduct::create(): Argument #3 ($quantity) must be of type int, string given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-22 12:52:59, Model\CartProduct::create(): Argument #3 ($quantity) must be of type int, string given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-23 06:21:41, Call to a member function getId() on null, file: /var/www/html/app/Controller/IndexController.php, line: 18
+2024-01-23 07:01:40, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-23 07:01:59, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-23 07:12:04, There is no active transaction, file: /var/www/html/app/Service/OrderService.php, line: 59
+2024-01-23 07:12:05, There is no active transaction, file: /var/www/html/app/Service/OrderService.php, line: 59
+2024-01-23 07:22:36, There is no active transaction, file: /var/www/html/app/Service/OrderService.php, line: 59
+2024-01-23 07:28:19, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-23 07:28:27, array_sum(): Argument #1 ($array) must be of type array, null given, file: /var/www/html/app/Controller/CartController.php, line: 67
+2024-01-23 07:28:31, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-23 07:30:55, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-23 07:31:18, Model\Product::getAllByUserId(): Argument #1 ($userId) must be of type int, null given, called in /var/www/html/app/Service/OrderService.php on line 34, file: /var/www/html/app/Model/Product.php, line: 52
+2024-01-23 14:58:15, Call to a member function getId() on null, file: /var/www/html/app/Controller/IndexController.php, line: 18
+2024-01-23 14:59:35, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46

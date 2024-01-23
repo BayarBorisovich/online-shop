@@ -14,7 +14,7 @@ class CartController
     {
         $this->authenticationService = $authenticationService;
     }
-    public function postAddProduct(AddProductRequest $request): void
+    public function postAddProduct(AddProductRequest $request): string
     {
         $user = $this->authenticationService->getCurrentUser();
         if (empty($user)) {
@@ -40,6 +40,7 @@ class CartController
         $cartId = $cart->getId();
 
         CartProduct::create($cartId, $productId, $quantity);
+
         header('location: /main');
 
     }

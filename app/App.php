@@ -8,7 +8,13 @@ class App
     private Container $container;
     private LoggerService $loggerService;
     private array $routes = [];
-    public function setContainer(Container $container): void
+//    public function setContainer(Container $container): void
+//    {
+//        $this->container = $container;
+//        $this->loggerService = $container->get(LoggerService::class);
+//    }
+
+    public function __construct(Container $container)
     {
         $this->container = $container;
         $this->loggerService = $container->get(LoggerService::class);

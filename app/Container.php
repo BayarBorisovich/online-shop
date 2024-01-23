@@ -3,6 +3,10 @@
 class Container
 {
     private array $services;
+    public function __construct(array $dependencies)
+    {
+        $this->services = $dependencies;
+    }
 
     public function set(string $className, callable $callback): void
     {
