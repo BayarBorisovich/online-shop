@@ -1,5 +1,6 @@
 <?php
 namespace Controller;
+use Model\CartProduct;
 use Model\Product;
 use Service\Authentication\AuthenticationInterface;
 use Service\Authentication\SessionAuthenticationService;
@@ -19,6 +20,15 @@ class IndexController
             header('location: /login');
         }
             $products = Product::getAll();
+
+        $cartProducts = CartProduct::getAllByUserId($user->getId());
+
+        $arrQuantity = [];
+        foreach ($cartProducts as $cartProduct) {
+            $arrQuantity[] = $cartProduct->getQuantity();
+        }
+
+        $totalQuantity = array_sum($arrQuantity); //общее количество
 
         require_once '../View/main.phtml';
     }

@@ -1,61 +1,59 @@
+<script
+        src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+        crossorigin="anonymous">
+</script>
 <div class="container">
     <h2>КАТАЛОГ</h2>
     <h2 class="card-deck">
         <a href="/login" > <h3 class="cart"> Login </h3> </a>
-        <?php foreach ($products as $product): ?>
-            <form action="/main" method="post" class="add_product">
-                <div class="card text-center">
-                    <a href="#">
-                        <div class="card-header">
-                            .
+        <div>
+            .
+        </div>
+        <div class="total_quantity">
+            <a href="/cart" > <h3 class="cart">  <?php print_r('в корзине: ' . $totalQuantity . ' шт.') ?>  </h3> </a>
+        </div>
+            <?php foreach ($products as $product): ?>
+                <form method="post" class="main" onsubmit="return false">
+                        <div class="card text-center">
+                            <a href="#">
+                                <div class="card-header">
+                                    .
+                                </div>
+                                <img class="card-img-top" src=<?php echo $product->getImageLink() ?> alt="Card image">
+                                <div class="card-body">
+                                    <a href="#"><h2 class="card-title"><?php echo $product->getName() ?></h2></a>
+                                    <a href="#"><h4 class="card-title"><?php echo $product->getDescription() ?></h4></a>
+                                    <label for="product_id"></label><input type="text" id="product_id" class="fadeIn second" name="product_id" placeholder="Product-id" hidden="" value="<?php echo $product->getId() ?>">
+                                    <label for="quantity"></label><input type="text" id="quantity" class="fadeIn third" name="quantity" placeholder="Quantity">
+                                    <input type="submit" class="fadeIn_fourth" value="Добавить в корзину">
+                                    <div class="card-footer">
+                                        <?php echo $product->getPrice() ." р." ?>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
-                        <img class="card-img-top" src=<?php echo $product->getImageLink() ?> alt="Card image">
-                        <div class="card-body">
-                            <a href="#"><h2 class="card-title"><?php echo $product->getName() ?></h2></a>
-                            <a href="#"><h4 class="card-title"><?php echo $product->getDescription() ?></h4></a>
-                            <label for="product_id"></label><input type="text" id="product_id" class="fadeIn second" name="product_id" placeholder="Product-id" hidden="" value="<?php echo $product->getId() ?>">
-                            <label for="quantity"></label><input type="text" id="quantity" class="fadeIn third" name="quantity" placeholder="Quantity">
-                            <input type="submit" class="fadeIn_fourth" value="Добавить в корзину">
-                            <div class="card-footer">
-                                <?php echo $product->getPrice() ." р." ?>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </form>
-        <?php endforeach; ?>
-<!--        <script-->
-<!--                src="https://code.jquery.com/jquery-3.7.0.min.js"-->
-<!--                integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="-->
-<!--                crossorigin="anonymous">-->
-<!--        </script>-->
-<!--        <script type="text/javascript">-->
-<!--            document.querySelectorAll('.add_product').forEach(function(form) {-->
-<!--                form.addEventListener('submit', function(event) {-->
-<!--                    event.preventDefault(); // Предотвращаем отправку формы-->
-<!---->
-<!--                    var formData = new FormData(form); // Создаем объект FormData и заполняем его значениями полей формы-->
-<!---->
-<!--                    fetch('/main', {-->
-<!--                        method: 'POST',-->
-<!--                        body: formData-->
-<!--                    })-->
-<!--                        .then(function(response) {-->
-<!--                            console.log(response);-->
-<!--                            return response.json();-->
-<!--                        })-->
-<!--                        .then(function(data) {-->
-<!--                            console.log('успешно');-->
-<!--                            // Обработка успешного ответа от сервера-->
-<!--                        })-->
-<!--                        .catch(function(error) {-->
-<!--                            console.log('ошибка');-->
-<!--                            // Обработка ошибок-->
-<!--                        });-->
-<!--                });-->
-<!--            });-->
-<!--        </script>-->
-        <a href="/cart" > <h3 class="cart">  Корзина  </h3> </a>
+                </form>
+            <?php endforeach; ?>
+        <script>
+            $(document).ready(function() {
+                $('.main').submit(function() {
+                    $.ajax({
+                        type: "POST",
+                        url: '/main',
+                        dataType: 'html',
+                        data: $(this).serialize(),
+                        success: function()
+                        {
+                            console.log('done');
+                            var s = document.getElementById("quantity");
+                            s.value = ' ';
+                            // alert('ok');
+                        }
+                    });
+                });
+            });
+        </script>
     </div>
     <style>
         body {

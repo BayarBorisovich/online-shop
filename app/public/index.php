@@ -8,12 +8,11 @@ use Request\AddProductRequest;
 use Request\LoginRequest;
 use Request\OrderRegistrationRequest;
 use Request\RegistrationRequest;
-use Service\Authentication\AuthenticationInterface;
 
 require_once "../Autoloader.php";
 Autoloader::registrate(dirname(__DIR__)); //значение текущей родительской директории
 
-$dependencies = include '../Config/Dependencies.php';
+$dependencies = include '../Config/Dependencies.php'; // включает и выполняет указанный файл(зависимости).
 
 $container = new Container($dependencies);
 
@@ -46,7 +45,7 @@ $container = new Container($dependencies);
 //    return new \Service\Authentication\SessionAuthenticationService();
 //});
 
-$app = new App($container);// почему не делаем require_once
+$app = new App($container);// передаем зависимоти
 
 $app->get('/registration', UserController::class, 'getRegistration');
 $app->post('/registration', UserController::class, 'postRegistration', RegistrationRequest::class);

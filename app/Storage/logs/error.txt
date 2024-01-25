@@ -82,3 +82,324 @@
 2024-01-23 07:31:18, Model\Product::getAllByUserId(): Argument #1 ($userId) must be of type int, null given, called in /var/www/html/app/Service/OrderService.php on line 34, file: /var/www/html/app/Model/Product.php, line: 52
 2024-01-23 14:58:15, Call to a member function getId() on null, file: /var/www/html/app/Controller/IndexController.php, line: 18
 2024-01-23 14:59:35, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 01:23:56, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 48
+2024-01-24 01:24:10, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 48
+2024-01-24 01:26:18, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 48
+2024-01-24 01:26:54, Model\CartProduct::create(): Argument #2 ($productId) must be of type int, null given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 01:27:55, array_sum(): Argument #1 ($array) must be of type array, null given, file: /var/www/html/app/Controller/CartController.php, line: 69
+2024-01-24 01:28:02, array_sum(): Argument #1 ($array) must be of type array, null given, file: /var/www/html/app/Controller/CartController.php, line: 69
+2024-01-24 01:28:08, array_sum(): Argument #1 ($array) must be of type array, null given, file: /var/www/html/app/Controller/CartController.php, line: 69
+2024-01-24 01:28:36, array_sum(): Argument #1 ($array) must be of type array, null given, file: /var/www/html/app/Controller/CartController.php, line: 69
+2024-01-24 01:28:40, Model\CartProduct::create(): Argument #2 ($productId) must be of type int, null given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 01:28:46, array_sum(): Argument #1 ($array) must be of type array, null given, file: /var/www/html/app/Controller/CartController.php, line: 69
+2024-01-24 01:32:07, array_sum(): Argument #1 ($array) must be of type array, null given, file: /var/www/html/app/Controller/CartController.php, line: 69
+2024-01-24 01:32:25, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 48
+2024-01-24 01:33:00, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 01:33:33, array_sum(): Argument #1 ($array) must be of type array, null given, file: /var/www/html/app/Controller/CartController.php, line: 67
+2024-01-24 01:53:29, array_sum(): Argument #1 ($array) must be of type array, null given, file: /var/www/html/app/Controller/CartController.php, line: 67
+2024-01-24 01:53:33, array_sum(): Argument #1 ($array) must be of type array, null given, file: /var/www/html/app/Controller/CartController.php, line: 67
+2024-01-24 01:54:08, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 01:55:17, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 03:29:10, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 03:29:10, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 03:29:40, array_sum(): Argument #1 ($array) must be of type array, null given, file: /var/www/html/app/Controller/CartController.php, line: 67
+2024-01-24 03:29:45, array_sum(): Argument #1 ($array) must be of type array, null given, file: /var/www/html/app/Controller/CartController.php, line: 67
+2024-01-24 03:29:53, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 03:31:37, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 03:35:34, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 07:34:31, Model\CartProduct::create(): Argument #3 ($quantity) must be of type int, string given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 07:34:36, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 07:35:26, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 07:38:44, Model\CartProduct::create(): Argument #3 ($quantity) must be of type int, string given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 07:40:00, Model\CartProduct::create(): Argument #3 ($quantity) must be of type int, string given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 07:40:04, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 07:40:46, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 07:41:39, Model\CartProduct::create(): Argument #3 ($quantity) must be of type int, string given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 07:41:44, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 07:42:50, Model\CartProduct::create(): Argument #3 ($quantity) must be of type int, string given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 07:42:57, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 07:43:55, Model\CartProduct::create(): Argument #3 ($quantity) must be of type int, string given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 07:48:32, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 08:47:53, Model\CartProduct::create(): Argument #3 ($quantity) must be of type int, string given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 08:47:59, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 08:49:09, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 08:49:58, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 08:52:50, Model\CartProduct::create(): Argument #2 ($productId) must be of type int, null given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 08:52:51, Model\CartProduct::create(): Argument #2 ($productId) must be of type int, null given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 08:52:56, Model\CartProduct::create(): Argument #2 ($productId) must be of type int, null given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 08:52:57, Model\CartProduct::create(): Argument #2 ($productId) must be of type int, null given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 08:53:00, Model\CartProduct::create(): Argument #2 ($productId) must be of type int, null given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 08:53:00, Model\CartProduct::create(): Argument #2 ($productId) must be of type int, null given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 08:53:02, Model\CartProduct::create(): Argument #2 ($productId) must be of type int, null given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 08:53:02, Model\CartProduct::create(): Argument #2 ($productId) must be of type int, null given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 08:53:03, Model\CartProduct::create(): Argument #2 ($productId) must be of type int, null given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 08:53:03, Model\CartProduct::create(): Argument #2 ($productId) must be of type int, null given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 08:53:03, Model\CartProduct::create(): Argument #2 ($productId) must be of type int, null given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 08:53:51, Model\CartProduct::create(): Argument #2 ($productId) must be of type int, null given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 08:53:54, Model\CartProduct::create(): Argument #2 ($productId) must be of type int, null given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 08:53:54, Model\CartProduct::create(): Argument #2 ($productId) must be of type int, null given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 08:53:55, Model\CartProduct::create(): Argument #2 ($productId) must be of type int, null given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 08:53:55, Model\CartProduct::create(): Argument #2 ($productId) must be of type int, null given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 08:56:29, Model\CartProduct::create(): Argument #2 ($productId) must be of type int, null given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 08:56:30, Model\CartProduct::create(): Argument #2 ($productId) must be of type int, null given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 08:56:31, Model\CartProduct::create(): Argument #2 ($productId) must be of type int, null given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 08:56:31, Model\CartProduct::create(): Argument #2 ($productId) must be of type int, null given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 08:56:58, Model\CartProduct::create(): Argument #2 ($productId) must be of type int, null given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 08:56:58, Model\CartProduct::create(): Argument #2 ($productId) must be of type int, null given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 08:56:58, Model\CartProduct::create(): Argument #2 ($productId) must be of type int, null given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 08:56:59, Model\CartProduct::create(): Argument #2 ($productId) must be of type int, null given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 08:56:59, Model\CartProduct::create(): Argument #2 ($productId) must be of type int, null given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 08:57:19, Model\CartProduct::create(): Argument #2 ($productId) must be of type int, null given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 08:57:20, Model\CartProduct::create(): Argument #2 ($productId) must be of type int, null given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 08:57:20, Model\CartProduct::create(): Argument #2 ($productId) must be of type int, null given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 08:57:20, Model\CartProduct::create(): Argument #2 ($productId) must be of type int, null given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 08:57:20, Model\CartProduct::create(): Argument #2 ($productId) must be of type int, null given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 08:57:49, Model\CartProduct::create(): Argument #2 ($productId) must be of type int, null given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 08:57:49, Model\CartProduct::create(): Argument #2 ($productId) must be of type int, null given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 08:57:50, Model\CartProduct::create(): Argument #2 ($productId) must be of type int, null given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 08:57:50, Model\CartProduct::create(): Argument #2 ($productId) must be of type int, null given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 08:57:50, Model\CartProduct::create(): Argument #2 ($productId) must be of type int, null given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 08:57:50, Model\CartProduct::create(): Argument #2 ($productId) must be of type int, null given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 08:58:14, Model\CartProduct::create(): Argument #2 ($productId) must be of type int, null given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 08:58:15, Model\CartProduct::create(): Argument #2 ($productId) must be of type int, null given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 08:58:15, Model\CartProduct::create(): Argument #2 ($productId) must be of type int, null given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 08:58:15, Model\CartProduct::create(): Argument #2 ($productId) must be of type int, null given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 08:58:33, Model\CartProduct::create(): Argument #2 ($productId) must be of type int, null given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 08:58:33, Model\CartProduct::create(): Argument #2 ($productId) must be of type int, null given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 08:58:33, Model\CartProduct::create(): Argument #2 ($productId) must be of type int, null given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 08:58:33, Model\CartProduct::create(): Argument #2 ($productId) must be of type int, null given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 08:58:34, Model\CartProduct::create(): Argument #2 ($productId) must be of type int, null given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 08:58:34, Model\CartProduct::create(): Argument #2 ($productId) must be of type int, null given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 09:00:25, Model\CartProduct::create(): Argument #2 ($productId) must be of type int, null given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 09:00:25, Model\CartProduct::create(): Argument #2 ($productId) must be of type int, null given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 09:00:26, Model\CartProduct::create(): Argument #2 ($productId) must be of type int, null given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 09:00:29, Model\CartProduct::create(): Argument #2 ($productId) must be of type int, null given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 09:00:29, Model\CartProduct::create(): Argument #2 ($productId) must be of type int, null given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 09:04:01, Model\CartProduct::create(): Argument #2 ($productId) must be of type int, null given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 09:04:01, Model\CartProduct::create(): Argument #2 ($productId) must be of type int, null given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 09:04:02, Model\CartProduct::create(): Argument #2 ($productId) must be of type int, null given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 09:04:02, Model\CartProduct::create(): Argument #2 ($productId) must be of type int, null given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 09:04:02, Model\CartProduct::create(): Argument #2 ($productId) must be of type int, null given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 09:05:31, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:24:50, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:28:12, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:29:43, Model\CartProduct::create(): Argument #2 ($productId) must be of type int, null given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 09:32:11, Model\CartProduct::create(): Argument #2 ($productId) must be of type int, null given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 09:32:15, Model\CartProduct::create(): Argument #2 ($productId) must be of type int, null given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 09:35:43, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:35:44, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:35:49, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:35:49, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:36:19, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:36:20, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:36:23, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:37:11, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:37:54, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:28, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:29, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:29, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:29, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:29, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:29, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:30, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:30, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:30, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:30, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:30, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:34, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:34, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:34, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:34, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:34, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:34, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:34, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:34, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:34, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:34, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:34, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:34, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:46, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:46, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:47, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:47, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:47, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:47, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:47, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:47, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:47, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:47, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:47, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:47, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:47, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:47, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:47, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:47, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:47, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:47, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:47, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:47, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:47, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:47, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:47, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:47, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:47, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:47, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:47, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:47, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:48, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:48, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:48, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:48, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:48, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:48, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:48, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:48, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:48, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:48, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:48, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:48, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:48, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:48, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:48, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:48, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:48, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:48, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:48, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:48, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:48, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:48, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:48, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:48, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:48, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:48, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:48, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:48, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:48, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:48, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:48, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:48, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:48, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:48, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:48, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:48, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:48, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:48, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:48, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:48, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:49, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:49, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:49, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:38:49, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:40:07, array_sum(): Argument #1 ($array) must be of type array, null given, file: /var/www/html/app/Controller/CartController.php, line: 67
+2024-01-24 09:40:20, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:43:30, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:45:39, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 09:45:39, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 10:07:13, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 10:07:13, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 10:11:44, array_sum(): Argument #1 ($array) must be of type array, null given, file: /var/www/html/app/Controller/CartController.php, line: 67
+2024-01-24 10:11:51, array_sum(): Argument #1 ($array) must be of type array, null given, file: /var/www/html/app/Controller/CartController.php, line: 67
+2024-01-24 10:12:17, array_sum(): Argument #1 ($array) must be of type array, null given, file: /var/www/html/app/Controller/CartController.php, line: 67
+2024-01-24 10:15:43, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 10:19:24, array_sum(): Argument #1 ($array) must be of type array, null given, file: /var/www/html/app/Controller/CartController.php, line: 67
+2024-01-24 10:19:28, array_sum(): Argument #1 ($array) must be of type array, null given, file: /var/www/html/app/Controller/CartController.php, line: 67
+2024-01-24 10:19:36, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 10:20:34, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 10:22:56, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 10:23:13, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 10:23:30, array_sum(): Argument #1 ($array) must be of type array, null given, file: /var/www/html/app/Controller/CartController.php, line: 67
+2024-01-24 10:23:38, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 10:23:59, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 10:24:14, array_sum(): Argument #1 ($array) must be of type array, null given, file: /var/www/html/app/Controller/CartController.php, line: 67
+2024-01-24 10:24:22, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 10:25:41, Model\CartProduct::create(): Argument #3 ($quantity) must be of type int, string given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 10:25:46, Model\CartProduct::create(): Argument #3 ($quantity) must be of type int, string given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 11:04:22, Model\CartProduct::create(): Argument #3 ($quantity) must be of type int, string given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 11:04:27, Model\CartProduct::create(): Argument #3 ($quantity) must be of type int, string given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 11:23:57, Model\CartProduct::create(): Argument #3 ($quantity) must be of type int, string given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 11:24:00, Model\CartProduct::create(): Argument #3 ($quantity) must be of type int, string given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 11:28:59, Model\CartProduct::create(): Argument #3 ($quantity) must be of type int, string given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 11:30:01, Model\CartProduct::create(): Argument #3 ($quantity) must be of type int, string given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 11:31:24, array_sum(): Argument #1 ($array) must be of type array, null given, file: /var/www/html/app/Controller/CartController.php, line: 67
+2024-01-24 11:34:09, Model\CartProduct::create(): Argument #3 ($quantity) must be of type int, string given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 11:34:14, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 11:34:21, array_sum(): Argument #1 ($array) must be of type array, null given, file: /var/www/html/app/Controller/CartController.php, line: 67
+2024-01-24 11:56:53, Model\CartProduct::create(): Argument #3 ($quantity) must be of type int, string given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 11:56:59, array_sum(): Argument #1 ($array) must be of type array, null given, file: /var/www/html/app/Controller/CartController.php, line: 67
+2024-01-24 11:57:07, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 11:57:47, Model\CartProduct::create(): Argument #3 ($quantity) must be of type int, string given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 11:58:03, Model\CartProduct::create(): Argument #3 ($quantity) must be of type int, string given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 12:00:38, Model\CartProduct::create(): Argument #3 ($quantity) must be of type int, string given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 12:00:40, Model\CartProduct::create(): Argument #3 ($quantity) must be of type int, string given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 12:01:35, Model\CartProduct::create(): Argument #3 ($quantity) must be of type int, string given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 12:01:53, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 12:02:14, array_sum(): Argument #1 ($array) must be of type array, null given, file: /var/www/html/app/Controller/CartController.php, line: 67
+2024-01-24 12:02:18, array_sum(): Argument #1 ($array) must be of type array, null given, file: /var/www/html/app/Controller/CartController.php, line: 67
+2024-01-24 12:04:15, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 12:05:08, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 46
+2024-01-24 12:05:19, array_sum(): Argument #1 ($array) must be of type array, null given, file: /var/www/html/app/Controller/CartController.php, line: 67
+2024-01-24 12:05:24, array_sum(): Argument #1 ($array) must be of type array, null given, file: /var/www/html/app/Controller/CartController.php, line: 67
+2024-01-24 12:05:32, Model\CartProduct::create(): Argument #3 ($quantity) must be of type int, string given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 12:09:11, Model\CartProduct::create(): Argument #3 ($quantity) must be of type int, string given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 12:09:16, Model\CartProduct::create(): Argument #3 ($quantity) must be of type int, string given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 12:09:23, Model\CartProduct::create(): Argument #3 ($quantity) must be of type int, string given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 12:09:39, array_sum(): Argument #1 ($array) must be of type array, null given, file: /var/www/html/app/Controller/CartController.php, line: 67
+2024-01-24 12:09:46, Model\CartProduct::create(): Argument #3 ($quantity) must be of type int, string given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 12:09:53, Model\CartProduct::create(): Argument #3 ($quantity) must be of type int, string given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 12:09:57, Model\CartProduct::create(): Argument #3 ($quantity) must be of type int, string given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 12:09:58, Model\CartProduct::create(): Argument #3 ($quantity) must be of type int, string given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 12:10:02, array_sum(): Argument #1 ($array) must be of type array, null given, file: /var/www/html/app/Controller/CartController.php, line: 67
+2024-01-24 12:10:10, array_sum(): Argument #1 ($array) must be of type array, null given, file: /var/www/html/app/Controller/CartController.php, line: 67
+2024-01-24 12:10:46, Model\CartProduct::create(): Argument #3 ($quantity) must be of type int, string given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 12:10:50, array_sum(): Argument #1 ($array) must be of type array, null given, file: /var/www/html/app/Controller/CartController.php, line: 67
+2024-01-24 12:11:53, Model\CartProduct::create(): Argument #3 ($quantity) must be of type int, string given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 12:11:56, array_sum(): Argument #1 ($array) must be of type array, null given, file: /var/www/html/app/Controller/CartController.php, line: 67
+2024-01-24 12:13:23, Model\CartProduct::create(): Argument #3 ($quantity) must be of type int, string given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 12:13:27, array_sum(): Argument #1 ($array) must be of type array, null given, file: /var/www/html/app/Controller/CartController.php, line: 67
+2024-01-24 12:13:31, array_sum(): Argument #1 ($array) must be of type array, null given, file: /var/www/html/app/Controller/CartController.php, line: 67
+2024-01-24 12:15:05, array_sum(): Argument #1 ($array) must be of type array, null given, file: /var/www/html/app/Controller/CartController.php, line: 67
+2024-01-24 12:15:12, Model\CartProduct::create(): Argument #3 ($quantity) must be of type int, string given, called in /var/www/html/app/Controller/CartController.php on line 42, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 12:15:16, array_sum(): Argument #1 ($array) must be of type array, null given, file: /var/www/html/app/Controller/CartController.php, line: 67
+2024-01-24 12:17:11, array_sum(): Argument #1 ($array) must be of type array, null given, file: /var/www/html/app/Controller/CartController.php, line: 68
+2024-01-24 12:19:54, Model\CartProduct::create(): Argument #3 ($quantity) must be of type int, string given, called in /var/www/html/app/Controller/CartController.php on line 41, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 12:22:02, array_sum(): Argument #1 ($array) must be of type array, null given, file: /var/www/html/app/Controller/CartController.php, line: 66
+2024-01-24 12:22:11, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 45
+2024-01-24 12:22:40, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 45
+2024-01-24 12:23:00, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 45
+2024-01-24 12:23:06, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 45
+2024-01-24 12:42:48, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 56
+2024-01-24 12:50:55, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 54
+2024-01-24 13:01:21, syntax error, unexpected token "{", file: /var/www/html/app/View/main.phtml, line: 6
+2024-01-24 13:04:03, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 45
+2024-01-24 13:04:08, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 45
+2024-01-24 13:46:57, Model\CartProduct::create(): Argument #3 ($quantity) must be of type int, string given, called in /var/www/html/app/Controller/CartController.php on line 41, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 13:48:25, Model\CartProduct::create(): Argument #3 ($quantity) must be of type int, string given, called in /var/www/html/app/Controller/CartController.php on line 41, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 13:48:54, Model\CartProduct::create(): Argument #3 ($quantity) must be of type int, string given, called in /var/www/html/app/Controller/CartController.php on line 41, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 13:51:09, Model\CartProduct::create(): Argument #3 ($quantity) must be of type int, string given, called in /var/www/html/app/Controller/CartController.php on line 41, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 13:51:17, Model\CartProduct::create(): Argument #3 ($quantity) must be of type int, string given, called in /var/www/html/app/Controller/CartController.php on line 41, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 13:51:18, Model\CartProduct::create(): Argument #3 ($quantity) must be of type int, string given, called in /var/www/html/app/Controller/CartController.php on line 41, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 13:52:34, Model\CartProduct::create(): Argument #3 ($quantity) must be of type int, string given, called in /var/www/html/app/Controller/CartController.php on line 41, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 13:52:37, Model\CartProduct::create(): Argument #3 ($quantity) must be of type int, string given, called in /var/www/html/app/Controller/CartController.php on line 41, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 13:52:38, Model\CartProduct::create(): Argument #3 ($quantity) must be of type int, string given, called in /var/www/html/app/Controller/CartController.php on line 41, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 13:52:39, Model\CartProduct::create(): Argument #3 ($quantity) must be of type int, string given, called in /var/www/html/app/Controller/CartController.php on line 41, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 14:15:01, syntax error, unexpected token "echo", file: /var/www/html/app/View/main.phtml, line: 30
+2024-01-24 14:21:19, Model\CartProduct::create(): Argument #3 ($quantity) must be of type int, string given, called in /var/www/html/app/Controller/CartController.php on line 41, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 15:16:36, Model\CartProduct::create(): Argument #3 ($quantity) must be of type int, string given, called in /var/www/html/app/Controller/CartController.php on line 41, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 15:20:50, Model\CartProduct::create(): Argument #3 ($quantity) must be of type int, string given, called in /var/www/html/app/Controller/CartController.php on line 41, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 15:38:00, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 45
+2024-01-24 15:58:37, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 45
+2024-01-24 16:01:47, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 45
+2024-01-24 16:01:51, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 45
+2024-01-24 16:01:52, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 45
+2024-01-24 16:02:01, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 45
+2024-01-24 16:03:55, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 45
+2024-01-24 16:04:58, array_sum(): Argument #1 ($array) must be of type array, null given, file: /var/www/html/app/Controller/CartController.php, line: 66
+2024-01-24 16:06:06, Model\CartProduct::create(): Argument #3 ($quantity) must be of type int, string given, called in /var/www/html/app/Controller/CartController.php on line 41, file: /var/www/html/app/Model/CartProduct.php, line: 19
+2024-01-24 16:06:09, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 45
+2024-01-24 16:06:12, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 45
+2024-01-24 16:06:13, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 45
+2024-01-24 16:06:39, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 45
+2024-01-25 06:37:59, Call to a member function getId() on null, file: /var/www/html/app/Controller/IndexController.php, line: 19
+2024-01-25 06:38:14, Call to a member function getId() on null, file: /var/www/html/app/Controller/IndexController.php, line: 19
+2024-01-25 06:47:41, Call to a member function getId() on null, file: /var/www/html/app/Controller/IndexController.php, line: 19
+2024-01-25 06:47:43, Call to a member function getId() on null, file: /var/www/html/app/Controller/IndexController.php, line: 19

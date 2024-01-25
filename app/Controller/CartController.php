@@ -30,7 +30,6 @@ class CartController
         $productId = $request->getBody()['product_id'];
         $quantity = $request->getBody()['quantity'];
 
-
         $cart = Cart::getOne($user->getId());
         if (!isset($cart)) {
             Cart::create($user->getId());
