@@ -1,5 +1,6 @@
 <?php
 
+use Container\Container;
 use Controller\CartController;
 use Controller\IndexController;
 use Controller\OrderController;

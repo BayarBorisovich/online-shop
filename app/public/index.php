@@ -1,5 +1,5 @@
 <?php
-
+use Container\Container;
 use Controller\CartController;
 use Controller\IndexController;
 use Controller\OrderController;
@@ -9,12 +9,14 @@ use Request\LoginRequest;
 use Request\OrderRegistrationRequest;
 use Request\RegistrationRequest;
 
-require_once "../Autoloader.php";
+require_once "../../vendor/bayar/my-core/src/Autoloader.php";
 Autoloader::registrate(dirname(__DIR__)); //значение текущей родительской директории
 
 $dependencies = include '../Config/Dependencies.php'; // включает и выполняет указанный файл(зависимости).
-
+require_once "../../vendor/bayar/my-core/src/Container/Container.php";
 $container = new Container($dependencies);
+
+
 
 //$container->set(UserController::class, function (Container $container) {
 //    $authenticationService = $container->get(AuthenticationInterface::class);
@@ -44,7 +46,7 @@ $container = new Container($dependencies);
 //$container->set(AuthenticationInterface::class, function () {
 //    return new \Service\Authentication\SessionAuthenticationService();
 //});
-
+require_once "../../vendor/bayar/my-core/src/App.php";
 $app = new App($container);// передаем зависимоти
 
 $app->get('/registration', UserController::class, 'getRegistration');

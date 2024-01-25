@@ -1,0 +1,16 @@
+{
+    "name": "bayar/online-shop",
+    "description": "test",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "BayarBorisovich",
+            "email": "bayashala.n@mail.ru"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "bayar/my-core": "dev-main"
+    }
+}

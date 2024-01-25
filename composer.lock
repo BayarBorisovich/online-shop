@@ -1,0 +1,49 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "eae4c2f93aabc248337ac21a21144154",
+    "packages": [
+        {
+            "name": "bayar/my-core",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/BayarBorisovich/my-core.git",
+                "reference": "e1cd8bcd41f070571bdc7be9e7206acc167c24a7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/BayarBorisovich/my-core/zipball/e1cd8bcd41f070571bdc7be9e7206acc167c24a7",
+                "reference": "e1cd8bcd41f070571bdc7be9e7206acc167c24a7",
+                "shasum": ""
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Bayar\\MyCore\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "support": {
+                "issues": "https://github.com/BayarBorisovich/my-core/issues",
+                "source": "https://github.com/BayarBorisovich/my-core/tree/test"
+            },
+            "time": "2024-01-25T06:27:47+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "bayar/my-core": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.2.0"
+}
