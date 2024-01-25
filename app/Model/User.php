@@ -1,7 +1,8 @@
 <?php
 
 namespace Model;
-require_once "../../vendor/bayar/my-core/src/Model/Model.php";
+use Bayar\MyCore\Model\Model;
+
 class User extends Model
 {
     private int $id;

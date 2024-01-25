@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/BayarBorisovich/my-core.git",
-                "reference": "e1cd8bcd41f070571bdc7be9e7206acc167c24a7"
+                "reference": "4185d9845777c2b78221afc389f64024d69638b3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/BayarBorisovich/my-core/zipball/e1cd8bcd41f070571bdc7be9e7206acc167c24a7",
-                "reference": "e1cd8bcd41f070571bdc7be9e7206acc167c24a7",
+                "url": "https://api.github.com/repos/BayarBorisovich/my-core/zipball/4185d9845777c2b78221afc389f64024d69638b3",
+                "reference": "4185d9845777c2b78221afc389f64024d69638b3",
                 "shasum": ""
             },
             "default-branch": true,
@@ -30,9 +30,9 @@
             "notification-url": "https://packagist.org/downloads/",
             "support": {
                 "issues": "https://github.com/BayarBorisovich/my-core/issues",
-                "source": "https://github.com/BayarBorisovich/my-core/tree/test"
+                "source": "https://github.com/BayarBorisovich/my-core/tree/main"
             },
-            "time": "2024-01-25T06:27:47+00:00"
+            "time": "2024-01-25T14:43:07+00:00"
         }
     ],
     "packages-dev": [],

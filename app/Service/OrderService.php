@@ -1,9 +1,9 @@
 <?php
 
 namespace Service;
+use Bayar\MyCore\Model\Model;
 use Model\Cart;
 use Model\CartProduct;
-use Model\Model;
 use Model\Order;
 use Model\OrdersItem;
 use Model\Product;

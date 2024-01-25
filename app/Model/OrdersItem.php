@@ -1,5 +1,7 @@
 <?php
 namespace Model;
+use Bayar\MyCore\Model\Model;
+
 class OrdersItem extends Model
 {
     private int $id;

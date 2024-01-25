@@ -1,5 +1,6 @@
 <?php
 namespace Model;
+use Bayar\MyCore\Model\Model;
 use PDO;
 
 class CartProduct extends Model

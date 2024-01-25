@@ -1,6 +1,6 @@
 <?php
 
-use Container\Container;
+use Bayar\MyCore\Container\Container;
 use Controller\CartController;
 use Controller\IndexController;
 use Controller\OrderController;

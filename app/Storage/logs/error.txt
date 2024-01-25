@@ -411,3 +411,14 @@
 2024-01-25 09:27:55, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 45
 2024-01-25 12:04:23, array_sum(): Argument #1 ($array) must be of type array, null given, file: /var/www/html/app/Controller/CartController.php, line: 66
 2024-01-25 12:04:26, array_sum(): Argument #1 ($array) must be of type array, null given, file: /var/www/html/app/Controller/CartController.php, line: 66
+2024-01-25 15:54:01, Class "Bayar\MyCore\Model\PDO" not found, file: /var/www/html/vendor/bayar/my-core/src/Model/Model.php, line: 13
+2024-01-25 15:55:22, Class "Bayar\MyCore\Model\PDO" not found, file: /var/www/html/vendor/bayar/my-core/src/Model/Model.php, line: 13
+2024-01-25 15:55:39, Class "Bayar\MyCore\Model\PDO" not found, file: /var/www/html/vendor/bayar/my-core/src/Model/Model.php, line: 13
+2024-01-25 15:55:51, Class "Bayar\MyCore\Model\PDO" not found, file: /var/www/html/vendor/bayar/my-core/src/Model/Model.php, line: 13
+2024-01-25 15:56:17, Class "Bayar\MyCore\Model\PDO" not found, file: /var/www/html/vendor/bayar/my-core/src/Model/Model.php, line: 13
+2024-01-25 15:58:36, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 45
+2024-01-25 15:58:41, Controller\CartController::postAddProduct(): Return value must be of type string, none returned, file: /var/www/html/app/Controller/CartController.php, line: 45
+2024-01-25 15:58:57, Class "Model\Model" not found, file: /var/www/html/app/Service/OrderService.php, line: 30
+2024-01-25 15:59:19, Class "Model\Model" not found, file: /var/www/html/app/Service/OrderService.php, line: 30
+2024-01-25 15:59:33, Class "Model\Model" not found, file: /var/www/html/app/Service/OrderService.php, line: 30
+2024-01-25 16:00:10, Class "Model\Model" not found, file: /var/www/html/app/Service/OrderService.php, line: 30

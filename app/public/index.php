@@ -1,5 +1,8 @@
 <?php
-use Container\Container;
+
+use Bayar\MyCore\App;
+use Bayar\MyCore\Autoloader;
+use Bayar\MyCore\Container\Container;
 use Controller\CartController;
 use Controller\IndexController;
 use Controller\OrderController;
@@ -9,44 +12,21 @@ use Request\LoginRequest;
 use Request\OrderRegistrationRequest;
 use Request\RegistrationRequest;
 
+
+
+
+
 require_once "../../vendor/bayar/my-core/src/Autoloader.php";
 Autoloader::registrate(dirname(__DIR__)); //значение текущей родительской директории
 
+require_once "../../vendor/autoload.php";
+
 $dependencies = include '../Config/Dependencies.php'; // включает и выполняет указанный файл(зависимости).
-require_once "../../vendor/bayar/my-core/src/Container/Container.php";
+
+//require_once "../../vendor/bayar/my-core/src/Container/Container.php";
 $container = new Container($dependencies);
 
-
-
-//$container->set(UserController::class, function (Container $container) {
-//    $authenticationService = $container->get(AuthenticationInterface::class);
-//
-//    return new UserController($authenticationService);
-//});
-//
-//$container->set(CartController::class, function (Container $container) {
-//    $authenticationService = $container->get(AuthenticationInterface::class);
-//
-//    return new CartController($authenticationService);
-//});
-//
-//$container->set(IndexController::class, function (Container $container) {
-//    $authenticationService = $container->get(AuthenticationInterface::class);
-//
-//    return new IndexController($authenticationService);
-//});
-//
-//$container->set(OrderController::class, function (Container $container) {
-//    $orderService = new \Service\OrderService();
-//    $authenticationService = $container->get(AuthenticationInterface::class);
-//
-//    return new OrderController($orderService, $authenticationService);
-//});
-//
-//$container->set(AuthenticationInterface::class, function () {
-//    return new \Service\Authentication\SessionAuthenticationService();
-//});
-require_once "../../vendor/bayar/my-core/src/App.php";
+//require_once "../../vendor/bayar/my-core/src/App.php";
 $app = new App($container);// передаем зависимоти
 
 $app->get('/registration', UserController::class, 'getRegistration');
